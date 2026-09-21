@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+
+# Material que no se publica: el repositorio es público.
+# Capturas del curso de otra empresa usado como referencia de diseño.
+Referencia/
+# PDF originales del material de cursos de PymEdu.
+contenido para los cursos/
+
+# Artefactos de compilación de TypeScript.
+*.tsbuildinfo

@@ -1,0 +1,156 @@
+/*
+  Sistema visual de PymEdu.
+
+  Los colores vienen de la plataforma principal (pymedu.cl), que usa el esquema
+  de tokens de Material 3. Se leyeron directamente de los dos temas del sitio.
+
+  Tema claro: verde bosque como color principal, superficie casi blanca.
+  Tema oscuro: azul apagado como color principal, superficie casi negra.
+  El dorado (secondary) es el hilo común entre ambos.
+
+  Tokens agregados que el sitio no define y el reproductor sí necesita:
+  --color-on-primary, --color-exito y su familia, y --color-atencion.
+*/
+
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+
+  --color-primary: #1b3022;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #2a4a33;
+  --color-on-primary-container: #6b9b7e;
+
+  --color-secondary: #c5a059;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #e8d4a0;
+  --color-on-secondary-container: #8a6e2f;
+
+  --color-tertiary: #3f2427;
+  --color-tertiary-container: #ffd9dd;
+  --color-on-tertiary-container: #3f2427;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #410002;
+
+  --color-surface: #f8f9fa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f5;
+  --color-surface-container: #edeeef;
+  --color-surface-container-high: #e7e8e9;
+  --color-surface-container-highest: #e1e3e4;
+  --color-on-surface: #191c1d;
+  --color-on-surface-variant: #454652;
+
+  --color-outline: #767683;
+  --color-outline-variant: #c6c5d4;
+
+  --color-inverse-surface: #2e3036;
+  --color-inverse-on-surface: #eff0f7;
+
+  /* Respuesta correcta. Toma la familia verde del tema claro. */
+  --color-exito: #2a4a33;
+  --color-on-exito: #ffffff;
+  --color-exito-container: #dbe9df;
+  --color-on-exito-container: #16301f;
+  --color-exito-outline: #8fb69d;
+
+  /* Respuesta incorrecta y avisos. Usa el dorado de la marca, no rojo. */
+  --color-atencion: #8a6e2f;
+  --color-atencion-container: #f6ebd5;
+  --color-atencion-outline: #d9bd7d;
+
+  --sombra-tarjeta: 0 10px 15px -3px rgba(27, 48, 34, 0.1), 0 4px 6px -4px rgba(27, 48, 34, 0.1);
+  --sombra-panel: 0 20px 25px -5px rgba(27, 48, 34, 0.1), 0 8px 10px -6px rgba(27, 48, 34, 0.1);
+  --borde-tarjeta: rgba(70, 70, 82, 0.1);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --color-primary: #5a9ab5;
+  /* El sitio usa texto blanco sobre este azul; en un curso de lectura larga
+     ese contraste no alcanza, así que el texto sobre el botón va oscuro. */
+  --color-on-primary: #08222f;
+  --color-primary-container: #003d5c;
+  --color-on-primary-container: #a1d4e9;
+
+  --color-secondary: #e8d4a0;
+  --color-on-secondary: #3a2f10;
+  --color-secondary-container: #5c4a1a;
+  --color-on-secondary-container: #f5e6c0;
+
+  --color-tertiary: #b0787b;
+  --color-tertiary-container: #5c3a3d;
+  --color-on-tertiary-container: #ffd9dd;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-surface: #0a0c10;
+  --color-surface-container-lowest: #0e1015;
+  --color-surface-container-low: #151820;
+  --color-surface-container: #1a1d24;
+  --color-surface-container-high: #22262e;
+  --color-surface-container-highest: #2c3038;
+  --color-on-surface: #e8eaf0;
+  --color-on-surface-variant: #b0b4c0;
+
+  --color-outline: #6b7080;
+  --color-outline-variant: #3a3e48;
+
+  --color-inverse-surface: #e8eaf0;
+  --color-inverse-on-surface: #0a0c10;
+
+  --color-exito: #7fc49a;
+  --color-on-exito: #06301a;
+  --color-exito-container: #1b3d2a;
+  --color-on-exito-container: #a8dcbd;
+  --color-exito-outline: #3f6b52;
+
+  --color-atencion: #e8d4a0;
+  --color-atencion-container: #453612;
+  --color-atencion-outline: #7d6a34;
+
+  --sombra-tarjeta: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --sombra-panel: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  --borde-tarjeta: rgba(176, 180, 192, 0.12);
+}
+
+:root {
+  /* Manrope es la tipografía de la plataforma principal. */
+  --fuente: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+
+  --t-portada: clamp(2rem, 1.2rem + 3.4vw, 3.25rem);
+  --t-titulo: clamp(1.65rem, 1.15rem + 2.1vw, 2.35rem);
+  --t-seccion: clamp(1.15rem, 1.05rem + 0.5vw, 1.4rem);
+  --t-bajada: clamp(1.05rem, 0.99rem + 0.32vw, 1.25rem);
+  --t-cuerpo: clamp(1rem, 0.97rem + 0.18vw, 1.0625rem);
+  --t-chico: 0.9375rem;
+  --t-mini: 0.8125rem;
+  --t-micro: 0.6875rem;
+
+  --e1: 0.25rem;
+  --e2: 0.5rem;
+  --e3: 0.75rem;
+  --e4: 1rem;
+  --e5: 1.5rem;
+  --e6: 2rem;
+  --e7: 3rem;
+  --e8: 4rem;
+
+  --ancho-pagina: 60rem;
+  --medida-lectura: 66ch;
+
+  /* Radios tomados de pymedu.cl: tarjetas 16 px, botones tipo píldora. */
+  --radio-tarjeta: 16px;
+  --radio-chico: 10px;
+  --radio-pildora: 999px;
+
+  --transicion: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transicion-rapida: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+}

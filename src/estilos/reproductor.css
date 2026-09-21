@@ -1,0 +1,410 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+/* ---------- Barra superior ---------- */
+
+.barra-superior {
+  display: flex;
+  align-items: center;
+  gap: var(--e5);
+  padding: var(--e3) var(--e5);
+  background: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--borde-tarjeta);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--e2);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.03em;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+/* En el reproductor la marca lleva de vuelta a la lista de módulos. */
+.marca--boton {
+  border-radius: var(--radio-chico);
+  transition: opacity var(--transicion-rapida);
+}
+
+.marca--boton:hover {
+  opacity: 0.8;
+}
+
+/* Placeholder del logo: el mosaico con ícono que usa pymedu.cl. */
+.marca__tile {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radio-chico);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.marca__tile .icono {
+  font-size: 1.15rem;
+}
+
+.avance {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.avance__linea {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--e4);
+}
+
+.avance__curso {
+  font-size: var(--t-mini);
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.avance__conteo {
+  font-size: var(--t-mini);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.avance__riel {
+  height: 6px;
+  background: var(--color-surface-container-high);
+  border-radius: var(--radio-pildora);
+  overflow: hidden;
+}
+
+.avance__relleno {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radio-pildora);
+  transition: width 320ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.acciones-barra {
+  display: flex;
+  align-items: center;
+  gap: var(--e2);
+  flex-shrink: 0;
+}
+
+.boton-icono {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radio-pildora);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  transition: background var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.boton-icono:hover {
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+}
+
+.boton-texto {
+  font-size: var(--t-mini);
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radio-pildora);
+  padding: 0.45rem 0.9rem;
+  transition: color var(--transicion-rapida), border-color var(--transicion-rapida);
+}
+
+.boton-texto:hover {
+  color: var(--color-on-surface);
+  border-color: var(--color-outline);
+}
+
+/* ---------- Índice de la lección ---------- */
+
+.indice {
+  background: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--borde-tarjeta);
+  padding: var(--e4) var(--e5);
+}
+
+.indice__lista {
+  max-width: var(--ancho-pagina);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.indice__item {
+  display: flex;
+  align-items: center;
+  gap: var(--e3);
+  width: 100%;
+  text-align: left;
+  padding: 0.55rem var(--e3);
+  border-radius: var(--radio-chico);
+  font-size: var(--t-chico);
+  color: var(--color-on-surface-variant);
+  transition: background var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.indice__item:hover:not(:disabled) {
+  background: var(--color-surface-container);
+  color: var(--color-on-surface);
+}
+
+.indice__item:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.indice__item--actual {
+  background: var(--color-surface-container-high);
+  color: var(--color-on-surface);
+  font-weight: 700;
+}
+
+.indice__numero {
+  font-size: var(--t-mini);
+  font-weight: 700;
+  color: var(--color-outline);
+  width: 1.4rem;
+  flex-shrink: 0;
+}
+
+.indice__marca {
+  margin-left: auto;
+  color: var(--color-exito);
+  flex-shrink: 0;
+}
+
+/* ---------- Lienzo y página ---------- */
+
+.lienzo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--e7) var(--e5) var(--e8);
+}
+
+.pagina {
+  width: 100%;
+  max-width: var(--ancho-pagina);
+  margin: 0 auto;
+  animation: entrada-pagina 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes entrada-pagina {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Píldora dorada de contexto, como la insignia del hero de pymedu.cl. */
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e2);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radio-pildora);
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.etiqueta .icono {
+  font-size: 1rem;
+}
+
+.titulo {
+  font-size: var(--t-titulo);
+  margin-top: var(--e4);
+  max-width: 20ch;
+}
+
+.titulo--portada {
+  font-size: var(--t-portada);
+  color: var(--color-primary);
+  max-width: 16ch;
+}
+
+.bajada {
+  font-size: var(--t-bajada);
+  color: var(--color-on-surface-variant);
+  max-width: var(--medida-lectura);
+  margin-top: var(--e4);
+}
+
+.cuerpo {
+  max-width: var(--medida-lectura);
+  margin-top: var(--e6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e4);
+}
+
+.cuerpo p {
+  color: var(--color-on-surface-variant);
+}
+
+.instruccion {
+  margin-top: var(--e4);
+  font-size: var(--t-chico);
+  color: var(--color-on-surface-variant);
+}
+
+/* Cierre de pantalla: la idea que se lleva el usuario. */
+.nota {
+  margin-top: var(--e6);
+  display: flex;
+  gap: var(--e3);
+  padding: var(--e4) var(--e5);
+  background: var(--color-surface-container);
+  border-radius: var(--radio-tarjeta);
+  font-size: var(--t-chico);
+  color: var(--color-on-surface-variant);
+  max-width: var(--medida-lectura);
+}
+
+.nota .icono {
+  color: var(--color-secondary);
+}
+
+/* Cifra con su fecha: en educación financiera el dato sin fecha engaña. */
+.fuente {
+  margin-top: var(--e5);
+  font-size: var(--t-mini);
+  color: var(--color-outline);
+  max-width: var(--medida-lectura);
+}
+
+/* ---------- Barra inferior ---------- */
+
+.barra-inferior {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--e4);
+  padding: var(--e3) var(--e5);
+  padding-bottom: max(var(--e3), env(safe-area-inset-bottom));
+  background: var(--color-surface-container-lowest);
+  border-top: 1px solid var(--borde-tarjeta);
+}
+
+.pasos {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.paso {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: var(--radio-pildora);
+  background: var(--color-outline-variant);
+  transition: background var(--transicion-rapida), width var(--transicion-rapida);
+}
+
+.paso:hover:not(:disabled) {
+  background: var(--color-outline);
+}
+
+.paso--visto {
+  background: var(--color-on-primary-container);
+}
+
+.paso--actual {
+  background: var(--color-primary);
+  width: 1.6rem;
+}
+
+.paso:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.aviso-bloqueo {
+  margin-top: var(--e5);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--e2);
+  padding: 0.6rem 1rem;
+  background: var(--color-atencion-container);
+  border: 1px solid var(--color-atencion-outline);
+  border-radius: var(--radio-pildora);
+  color: var(--color-atencion);
+  font-weight: 700;
+  font-size: var(--t-mini);
+}
+
+@media (max-width: 40rem) {
+  /* En el teléfono el encabezado usa dos filas: identidad arriba, avance abajo. */
+  .barra-superior {
+    flex-wrap: wrap;
+    row-gap: var(--e3);
+    padding: var(--e3) var(--e4);
+    gap: var(--e3);
+  }
+
+  .acciones-barra {
+    margin-left: auto;
+  }
+
+  .avance {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .lienzo {
+    padding: var(--e5) var(--e4) var(--e7);
+  }
+
+  .barra-inferior {
+    padding-left: var(--e4);
+    padding-right: var(--e4);
+  }
+
+  .pasos {
+    display: none;
+  }
+
+  .barra-inferior .boton {
+    flex: 1;
+  }
+
+  .titulo,
+  .titulo--portada {
+    max-width: none;
+  }
+}

@@ -1,0 +1,166 @@
+/* Lista de módulos del nivel. Usa la tarjeta de pymedu.cl. */
+
+.modulos {
+  margin-top: var(--e7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e3);
+}
+
+.modulo {
+  display: flex;
+  align-items: center;
+  gap: var(--e4);
+  text-align: left;
+  width: 100%;
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--borde-tarjeta);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--e5);
+  transition: border-color var(--transicion), box-shadow var(--transicion),
+    transform var(--transicion);
+}
+
+.modulo:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--sombra-panel);
+  transform: translateY(-2px);
+}
+
+.modulo__numero {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: var(--radio-pildora);
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+  font-weight: 800;
+  font-size: var(--t-chico);
+}
+
+.modulo--completado .modulo__numero {
+  background: var(--color-exito-container);
+  color: var(--color-exito);
+}
+
+.modulo__cuerpo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--e2);
+}
+
+.modulo__encabezado {
+  display: flex;
+  align-items: center;
+  gap: var(--e3);
+  flex-wrap: wrap;
+}
+
+.modulo__titulo {
+  font-weight: 800;
+  font-size: var(--t-seccion);
+  letter-spacing: -0.02em;
+}
+
+.modulo__estado {
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radio-pildora);
+}
+
+.modulo__estado--completado {
+  background: var(--color-exito-container);
+  color: var(--color-on-exito-container);
+}
+
+.modulo__estado--en-curso {
+  background: var(--color-secondary-container);
+  color: var(--color-on-secondary-container);
+}
+
+.modulo__estado--pendiente {
+  background: var(--color-surface-container);
+  color: var(--color-on-surface-variant);
+}
+
+.modulo__meta {
+  font-size: var(--t-mini);
+  color: var(--color-on-surface-variant);
+}
+
+.modulo__riel {
+  display: block;
+  height: 4px;
+  margin-top: var(--e1);
+  background: var(--color-surface-container-high);
+  border-radius: var(--radio-pildora);
+  overflow: hidden;
+}
+
+.modulo__relleno {
+  display: block;
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radio-pildora);
+}
+
+.modulo__flecha {
+  color: var(--color-outline);
+  flex-shrink: 0;
+}
+
+.modulo:hover .modulo__flecha {
+  color: var(--color-primary);
+}
+
+/* Cierre de lección: qué viene después. */
+
+.siguiente-modulo {
+  margin-top: var(--e7);
+  max-width: var(--medida-lectura);
+  background: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radio-tarjeta);
+  padding: var(--e5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--e3);
+}
+
+.siguiente-modulo__rotulo {
+  font-size: var(--t-micro);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-outline);
+}
+
+.siguiente-modulo__titulo {
+  font-weight: 800;
+  font-size: var(--t-seccion);
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 40rem) {
+  .modulo {
+    padding: var(--e4);
+    gap: var(--e3);
+    align-items: flex-start;
+  }
+
+  .modulo__numero {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .modulo__flecha {
+    display: none;
+  }
+}
