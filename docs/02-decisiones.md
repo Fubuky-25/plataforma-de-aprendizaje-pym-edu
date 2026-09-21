@@ -1,7 +1,7 @@
 # Decisiones del proyecto — PymEdu
 
 Registro de las decisiones tomadas y de las que siguen abiertas.
-Última actualización: 2026-09-20.
+Última actualización: 2026-09-21.
 
 ---
 
@@ -80,6 +80,16 @@ Convertir un nivel entero obligó a sumar una lista de módulos. Es deliberadame
 
 El detalle del programa, las adaptaciones hechas, las correcciones al material y cómo convertir el resto están en [03-programa-y-contenido.md](03-programa-y-contenido.md).
 
+### 8. Publicación: repositorio público y GitHub Pages
+
+Decidido el 2026-09-21 para la ronda de prueba con el equipo. Se eligió sobre un repositorio privado con Vercel por mantener todo en GitHub.
+
+- **Repositorio:** https://github.com/Fubuky-25/plataforma-de-aprendizaje-pym-edu
+- **Sitio:** https://fubuky-25.github.io/plataforma-de-aprendizaje-pym-edu/
+- **Qué queda fuera:** las capturas de la referencia y los PDF del material. En los documentos se quitó el nombre de la empresa del curso de referencia.
+- **Buscadores:** el sitio pide no ser indexado mientras el contenido no esté validado.
+- **Publicación manual** con `npm run publicar`. GitHub Actions requiere un permiso que la sesión actual de GitHub no tiene.
+
 ---
 
 ## Decisiones pendientes
@@ -88,8 +98,8 @@ El detalle del programa, las adaptaciones hechas, las correcciones al material y
 2. **Revisión tributaria y legal.** Los niveles 2 y 3 tocan IVA, Formulario 29, formalización y contabilidad. Falta definir quién lo revisa antes de publicarlo.
 3. **Revisión del contenido del Nivel 1.** Las alternativas correctas del quiz se dedujeron en los seis módulos, los casos prácticos son nuevos y hay cinco cambios deliberados respecto del material. El módulo 1.6 es el que más revisión necesita. Detalle en la sección 2 del documento de programa.
 4. **Logo real.** El mosaico con ícono de maletín es un marcador de posición que imita al del sitio. Falta el archivo del logo.
-5. **Publicación.** Si el equipo debe probarlo desde el teléfono, hay que publicar el sitio en un link accesible. No se ha decidido dónde.
-6. **Fórmulas del simulador.** Existen cinco, las del Nivel 1. Los niveles 2 y 3 van a pedir punto de equilibrio, flujo proyectado y VAN o TIR.
+5. **Fórmulas del simulador.** Existen cinco, las del Nivel 1. Los niveles 2 y 3 van a pedir punto de equilibrio, flujo proyectado y VAN o TIR.
+6. **Relación con el ERP.** Si esto queda como un sitio aparte o se integra en pymedu.cl, con el mismo login. Es la decisión que más afecta los pasos siguientes; ver el handoff.
 
 ---
 
