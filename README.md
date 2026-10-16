@@ -14,11 +14,13 @@ El estado del proyecto y los pasos siguientes están en el
 
 Es una versión de prueba para revisión interna.
 
-- Está el **Nivel 1 completo**: seis módulos, 55 pantallas y cinco
-  calculadoras. Se entra por la lista de módulos. Los niveles 2 y 3 están
-  pendientes.
-- **Las cifras son de 2025 y 2024.** Se muestran siempre con su fecha, pero hay
+- Están los **niveles 1 y 2 completos**: doce módulos, 109 pantallas y nueve
+  calculadoras. Se entra por la lista de módulos, con un selector de nivel. El
+  Nivel 3 está pendiente.
+- **Las cifras son de 2024 y 2025.** Se muestran siempre con su fecha, pero hay
   que actualizarlas antes de mostrarlo a clientes.
+- **Los módulos de IVA, formalización y financiamiento no tienen revisión
+  profesional.** No deberían mostrarse a un usuario real hasta que la tengan.
 - Las alternativas correctas de las evaluaciones se dedujeron del contenido,
   porque el material original no las marcaba. Hay que revisarlas.
 - El logo es provisional.

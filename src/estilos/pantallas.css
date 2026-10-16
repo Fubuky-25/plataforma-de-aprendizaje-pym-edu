@@ -46,7 +46,7 @@
 }
 
 .contenido__punto .icono {
-  color: var(--color-secondary);
+  color: var(--color-on-secondary-container);
   font-size: 1.1rem;
   margin-top: 0.2em;
 }
@@ -101,7 +101,7 @@
 }
 
 .tarjeta__signo {
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   flex-shrink: 0;
   transition: transform var(--transicion-rapida), color var(--transicion-rapida);
 }
@@ -226,7 +226,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
 }
 
 .pregunta__texto {
@@ -432,7 +432,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--e1);
 }
 
@@ -563,7 +563,7 @@
 }
 
 .campo__moneda {
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   font-size: var(--t-chico);
   font-weight: 700;
   white-space: nowrap;
@@ -642,7 +642,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   margin-bottom: var(--e2);
 }
 
@@ -716,14 +716,14 @@
   gap: var(--e2);
   font-weight: 800;
   font-size: var(--t-chico);
-  color: var(--color-secondary);
+  color: var(--color-on-secondary-container);
   margin-bottom: var(--e3);
 }
 
 .cierre__actualizada {
   margin-top: var(--e6);
   font-size: var(--t-mini);
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   max-width: var(--medida-lectura);
 }
 
@@ -763,7 +763,7 @@
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-outline);
+    color: var(--color-on-surface-variant);
     margin-bottom: var(--e2);
   }
 

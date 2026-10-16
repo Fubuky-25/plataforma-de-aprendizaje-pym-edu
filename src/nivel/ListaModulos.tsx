@@ -1,28 +1,30 @@
 import { useMemo } from 'react'
-import type { Nivel } from '../contenido/nivel1'
-import { duracionDe } from '../contenido/nivel1'
+import type { Nivel } from '../tipos'
+import { duracionDe } from '../contenido/niveles'
 import { leerResumen } from '../reproductor/useProgreso'
 import { useTema } from '../reproductor/useTema'
 
 interface Props {
-  nivel: Nivel
+  niveles: Nivel[]
+  nivelActivo: Nivel
+  alCambiarNivel: (nivelId: string) => void
   alAbrir: (leccionId: string) => void
 }
 
-export function ListaModulos({ nivel, alAbrir }: Props) {
+export function ListaModulos({ niveles, nivelActivo, alCambiarNivel, alAbrir }: Props) {
   const { tema, alternar } = useTema()
 
-  // Se lee una vez al montar. Como se vuelve aquí al salir de una lección,
-  // el componente se monta de nuevo y el estado queda al día.
+  // Se lee una vez por nivel al montar. Como se vuelve aquí al salir de una
+  // lección, el componente se monta de nuevo y el estado queda al día.
   const resumenes = useMemo(
-    () => nivel.lecciones.map((l) => leerResumen(l.id, l.pantallas.length)),
-    [nivel.lecciones],
+    () => nivelActivo.lecciones.map((l) => leerResumen(l.id, l.pantallas.length)),
+    [nivelActivo],
   )
 
   const completados = resumenes.filter((r) => r.completada).length
-  const minutos = nivel.lecciones.reduce((suma, l) => suma + duracionDe(l), 0)
+  const minutos = nivelActivo.lecciones.reduce((suma, l) => suma + duracionDe(l), 0)
   const siguiente = resumenes.findIndex((r) => !r.completada)
-  const leccionSugerida = siguiente === -1 ? null : nivel.lecciones[siguiente]
+  const leccionSugerida = siguiente === -1 ? null : nivelActivo.lecciones[siguiente]
   const algoEmpezado = resumenes.some((r) => r.iniciada || r.completada)
 
   let textoBoton = 'Empezar el nivel'
@@ -41,22 +43,22 @@ export function ListaModulos({ nivel, alAbrir }: Props) {
 
         <div className="avance">
           <div className="avance__linea">
-            <span className="avance__curso">{nivel.subtitulo}</span>
+            <span className="avance__curso">{nivelActivo.subtitulo}</span>
             <span className="avance__conteo">
-              {completados} de {nivel.lecciones.length} módulos
+              {completados} de {nivelActivo.lecciones.length} módulos
             </span>
           </div>
           <div
             className="avance__riel"
             role="progressbar"
             aria-valuemin={0}
-            aria-valuemax={nivel.lecciones.length}
+            aria-valuemax={nivelActivo.lecciones.length}
             aria-valuenow={completados}
-            aria-label="Avance del nivel"
+            aria-label={`Avance del ${nivelActivo.titulo}`}
           >
             <div
               className="avance__relleno"
-              style={{ width: `${(completados / nivel.lecciones.length) * 100}%` }}
+              style={{ width: `${(completados / nivelActivo.lecciones.length) * 100}%` }}
             />
           </div>
         </div>
@@ -77,20 +79,32 @@ export function ListaModulos({ nivel, alAbrir }: Props) {
 
       <main className="lienzo">
         <div className="pagina">
-          <p className="etiqueta">
-            <span className="icono" aria-hidden="true">
-              school
-            </span>
-            {nivel.titulo}
-          </p>
-          <h1 className="titulo titulo--portada">{nivel.subtitulo}</h1>
-          <p className="bajada">{nivel.descripcion}</p>
+          {niveles.length > 1 && (
+            <nav className="selector-nivel" aria-label="Niveles del programa">
+              {niveles.map((n) => (
+                <button
+                  type="button"
+                  key={n.id}
+                  className={
+                    n.id === nivelActivo.id ? 'selector-nivel__opcion activa' : 'selector-nivel__opcion'
+                  }
+                  aria-current={n.id === nivelActivo.id}
+                  onClick={() => alCambiarNivel(n.id)}
+                >
+                  {n.titulo}
+                </button>
+              ))}
+            </nav>
+          )}
+
+          <h1 className="titulo titulo--portada">{nivelActivo.subtitulo}</h1>
+          <p className="bajada">{nivelActivo.descripcion}</p>
 
           <p className="portada__meta">
             <span className="icono" aria-hidden="true">
               schedule
             </span>
-            {nivel.lecciones.length} módulos · unos {minutos} minutos en total
+            {nivelActivo.lecciones.length} módulos · unos {minutos} minutos en total
           </p>
 
           {leccionSugerida && (
@@ -109,7 +123,7 @@ export function ListaModulos({ nivel, alAbrir }: Props) {
           )}
 
           <div className="modulos">
-            {nivel.lecciones.map((leccion, i) => {
+            {nivelActivo.lecciones.map((leccion, i) => {
               const r = resumenes[i]
               const estado = r.completada ? 'completado' : r.iniciada ? 'en curso' : 'pendiente'
               return (
@@ -120,11 +134,7 @@ export function ListaModulos({ nivel, alAbrir }: Props) {
                   onClick={() => alAbrir(leccion.id)}
                 >
                   <span className="modulo__numero" aria-hidden="true">
-                    {r.completada ? (
-                      <span className="icono icono--lleno">check_circle</span>
-                    ) : (
-                      i + 1
-                    )}
+                    {r.completada ? <span className="icono icono--lleno">check_circle</span> : i + 1}
                   </span>
 
                   <span className="modulo__cuerpo">
@@ -154,8 +164,9 @@ export function ListaModulos({ nivel, alAbrir }: Props) {
           </div>
 
           <p className="fuente">
-            El contenido proviene del material de PymEdu y aún tiene cifras de 2025 que hay que
-            actualizar. Cada dato se muestra con la fecha a la que corresponde.
+            El contenido proviene del material de PymEdu y todavía tiene cifras de 2024 y 2025 que
+            hay que actualizar. Cada dato se muestra con la fecha a la que corresponde. Los módulos
+            de temas tributarios y legales están pendientes de revisión profesional.
           </p>
         </div>
       </main>

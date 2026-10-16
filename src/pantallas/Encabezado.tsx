@@ -19,7 +19,10 @@ export function Encabezado({ etiqueta, icono, titulo, bajada, portada }: Props) 
           {etiqueta}
         </p>
       )}
-      <h1 className={portada ? 'titulo titulo--portada' : 'titulo'}>{titulo}</h1>
+      {/* `tabIndex` permite moverle el foco al cambiar de pantalla. */}
+      <h1 id="titulo-pantalla" tabIndex={-1} className={portada ? 'titulo titulo--portada' : 'titulo'}>
+        {titulo}
+      </h1>
       {bajada && <p className="bajada">{bajada}</p>}
     </>
   )

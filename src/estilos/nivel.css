@@ -1,3 +1,32 @@
+/* Selector de nivel: pestañas en forma de píldora, como el resto de la marca. */
+
+.selector-nivel {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  margin-bottom: var(--e5);
+  background: var(--color-surface-container);
+  border-radius: var(--radio-pildora);
+}
+
+.selector-nivel__opcion {
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radio-pildora);
+  font-size: var(--t-mini);
+  font-weight: 700;
+  color: var(--color-on-surface-variant);
+  transition: background var(--transicion-rapida), color var(--transicion-rapida);
+}
+
+.selector-nivel__opcion:hover {
+  color: var(--color-on-surface);
+}
+
+.selector-nivel__opcion.activa {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
 /* Lista de módulos del nivel. Usa la tarjeta de pymedu.cl. */
 
 .modulos {
@@ -112,7 +141,7 @@
 }
 
 .modulo__flecha {
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   flex-shrink: 0;
 }
 
@@ -139,7 +168,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
 }
 
 .siguiente-modulo__titulo {

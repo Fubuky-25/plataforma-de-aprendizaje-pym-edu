@@ -2,15 +2,31 @@ import type { ReactNode } from 'react'
 
 export const pesos = new Intl.NumberFormat('es-CL', { maximumFractionDigits: 0 })
 
+/** Topes para que un número escrito a mano no produzca resultados absurdos. */
+const TOPE_MONTO = 9_999_999_999
+const TOPE_TASA = 100
+
 export function soloDigitos(bruto: string): number {
   const d = bruto.replace(/\D/g, '')
-  return d ? Number(d) : 0
+  return d ? Math.min(Number(d), TOPE_MONTO) : 0
 }
 
 export function soloDecimal(bruto: string): number {
   const limpio = bruto.replace(',', '.').replace(/[^\d.]/g, '')
   const n = Number(limpio)
-  return Number.isFinite(n) ? n : 0
+  return Number.isFinite(n) ? Math.min(Math.max(n, 0), TOPE_TASA) : 0
+}
+
+/** Mensaje neutro mientras falte algún dato: un campo vacío no es un diagnóstico. */
+export function SinDatos({ children }: { children: ReactNode }) {
+  return (
+    <div className="resultado" role="status">
+      <p className="resultado__rotulo">Falta un dato</p>
+      <p className="resultado__lectura" style={{ marginTop: 0 }}>
+        {children}
+      </p>
+    </div>
+  )
 }
 
 export function porcentaje(n: number, decimales = 1): string {

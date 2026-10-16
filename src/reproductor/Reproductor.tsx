@@ -62,12 +62,25 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
   useEffect(() => {
     window.scrollTo({ top: 0 })
     setIndiceAbierto(false)
+    // Al cambiar de pantalla el foco va al título, para que un lector de
+    // pantalla anuncie el contenido nuevo en vez de quedarse callado.
+    document.getElementById('titulo-pantalla')?.focus()
   }, [indice])
 
   useEffect(() => {
+    document.title = `${leccion.modulo}: ${leccion.titulo} — PymEdu`
+    return () => {
+      document.title = 'PymEdu'
+    }
+  }, [leccion.modulo, leccion.titulo])
+
+  useEffect(() => {
     function alTeclado(e: KeyboardEvent) {
+      // Las flechas solo navegan cuando no hay nada enfocado. Si el foco está en
+      // una opción o una ficha, la flecha es parte de la actividad y saltar de
+      // pantalla haría perder lo que el usuario llevaba sin confirmar.
       const foco = document.activeElement
-      if (foco instanceof HTMLInputElement || foco instanceof HTMLTextAreaElement) return
+      if (foco && foco !== document.body) return
       if (e.key === 'ArrowRight') avanzar()
       if (e.key === 'ArrowLeft') retroceder()
     }
@@ -142,6 +155,11 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
                 key={p.id}
                 className={i === indice ? 'indice__item indice__item--actual' : 'indice__item'}
                 disabled={i > limite}
+                aria-label={
+                  i > limite
+                    ? `${p.titulo}. Bloqueada: resuelve antes la actividad pendiente.`
+                    : undefined
+                }
                 onClick={() => irA(i)}
               >
                 <span className="indice__numero">{i + 1}</span>

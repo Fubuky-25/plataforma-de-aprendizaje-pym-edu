@@ -6,7 +6,16 @@ import type {
   SimuladorPagoMinimo,
   SimuladorRegla,
 } from '../../tipos'
-import { CampoNumero, Linea, Resultado, pesos, porcentaje, soloDecimal, soloDigitos } from './piezas'
+import {
+  CampoNumero,
+  Linea,
+  Resultado,
+  SinDatos,
+  pesos,
+  porcentaje,
+  soloDecimal,
+  soloDigitos,
+} from './piezas'
 
 /* ---------- Inflación ---------- */
 
@@ -163,7 +172,11 @@ export function CalcPagoMinimo({ pantalla }: { pantalla: SimuladorPagoMinimo }) 
         />
       </div>
 
-      {nuncaTermina ? (
+      {deudaN <= 0 || cuotaN <= 0 ? (
+        <SinDatos>
+          Escribe cuánto debes y cuánto vas a pagar al mes para ver en cuánto tiempo la terminas.
+        </SinDatos>
+      ) : nuncaTermina ? (
         <Resultado rotulo={pantalla.lectura} cifra="No se termina nunca" tono="mal">
           <div className="resultado__detalle">
             <Linea valor={`$${pesos.format(interesPrimerMes)}`}>Interés del primer mes</Linea>
@@ -290,16 +303,20 @@ export function CalcCarga({ pantalla }: { pantalla: SimuladorCarga }) {
         />
       </div>
 
-      <Resultado rotulo={pantalla.lectura} cifra={`${porcentaje(carga)} %`} tono={tono}>
-        <div className="resultado__detalle">
-          <Linea valor={`$${pesos.format(cuotasN)}`}>Cuotas al mes</Linea>
-          <Linea valor={`$${pesos.format(ingresoN)}`}>Ingreso al mes</Linea>
-          <Linea valor={`$${pesos.format(Math.max(0, ingresoN - cuotasN))}`}>
-            Te queda para vivir
-          </Linea>
-        </div>
-        <p className="resultado__lectura">{lectura}</p>
-      </Resultado>
+      {ingresoN <= 0 ? (
+        <SinDatos>Escribe cuánto recibes al mes para ver tu carga financiera.</SinDatos>
+      ) : (
+        <Resultado rotulo={pantalla.lectura} cifra={`${porcentaje(carga)} %`} tono={tono}>
+          <div className="resultado__detalle">
+            <Linea valor={`$${pesos.format(cuotasN)}`}>Cuotas al mes</Linea>
+            <Linea valor={`$${pesos.format(ingresoN)}`}>Ingreso al mes</Linea>
+            <Linea valor={`$${pesos.format(Math.max(0, ingresoN - cuotasN))}`}>
+              Te queda para vivir
+            </Linea>
+          </div>
+          <p className="resultado__lectura">{lectura}</p>
+        </Resultado>
+      )}
     </>
   )
 }

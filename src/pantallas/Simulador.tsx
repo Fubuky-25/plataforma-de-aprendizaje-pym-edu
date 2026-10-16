@@ -7,6 +7,12 @@ import {
   CalcPagoMinimo,
   CalcRegla,
 } from './simuladores/Calculadoras'
+import {
+  CalcCuota,
+  CalcDiasDeCaja,
+  CalcGastoAnual,
+  CalcIva,
+} from './simuladores/CalculadorasNegocio'
 
 /** Elige la calculadora según el cálculo que declare el contenido. */
 function Calculadora({ pantalla }: { pantalla: PantallaSimulador }) {
@@ -21,6 +27,14 @@ function Calculadora({ pantalla }: { pantalla: PantallaSimulador }) {
       return <CalcMeta pantalla={pantalla} />
     case 'cargaFinanciera':
       return <CalcCarga pantalla={pantalla} />
+    case 'diasDeCaja':
+      return <CalcDiasDeCaja pantalla={pantalla} />
+    case 'gastoAnual':
+      return <CalcGastoAnual pantalla={pantalla} />
+    case 'iva':
+      return <CalcIva pantalla={pantalla} />
+    case 'cuotaCredito':
+      return <CalcCuota pantalla={pantalla} />
   }
 }
 

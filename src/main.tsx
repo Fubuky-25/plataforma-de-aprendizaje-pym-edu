@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
+import { ReporteDeError } from './ReporteDeError'
 
 import './estilos/variables.css'
 import './estilos/base.css'
@@ -10,6 +11,8 @@ import './estilos/nivel.css'
 
 createRoot(document.getElementById('raiz')!).render(
   <StrictMode>
-    <App />
+    <ReporteDeError>
+      <App />
+    </ReporteDeError>
   </StrictMode>,
 )

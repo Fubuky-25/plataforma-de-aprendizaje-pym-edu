@@ -1,6 +1,6 @@
 # Handoff: plataforma de aprendizaje PymEdu
 
-Estado al 2026-09-21 y pasos para seguir avanzando.
+Estado al 2026-10-16 y pasos para seguir avanzando.
 
 | | |
 |---|---|
@@ -12,20 +12,40 @@ Estado al 2026-09-21 y pasos para seguir avanzando.
 
 ## 1. En qué punto estamos
 
-Existe una **versión de prueba publicada** con el Nivel 1 completo del programa de educación financiera de PymEdu, lista para que el equipo la revise y opine.
+Existe una **versión de prueba publicada** con los niveles 1 y 2 completos del programa de PymEdu, lista para que el equipo la revise y opine.
 
-Es un reproductor de lecciones interactivas, no la plataforma completa. PymEdu ya existe como ERP en pymedu.cl; este proyecto es su componente educativo, y todavía no está conectado con él.
+Es un reproductor de lecciones interactivas, no la plataforma completa. PymEdu ya existe como ERP en pymedu.cl; este proyecto es su componente educativo. Se decidió que se integre **mediante un enlace desde el ERP** hacia este sitio, que sigue siendo una aplicación aparte; integrarlo dentro del ERP mismo queda como posibilidad futura.
 
 ### Lo que funciona
 
-- **Nivel 1 completo:** seis módulos, 55 pantallas, unos 78 minutos de contenido.
+- **Niveles 1 y 2 completos:** doce módulos, 109 pantallas, unas 2 horas y 40 minutos de contenido, con un selector para cambiar de nivel.
 - **Diez tipos de pantalla:** portada, lectura, tarjetas que se revelan, comparación, caso de negocio, emparejar, calculadora, aplícalo a tu negocio, evaluación y cierre.
-- **Cinco calculadoras:** inflación, regla 50/30/20, pago mínimo de tarjeta, meta de ahorro y carga financiera con semáforo. Las fórmulas se revisaron a mano.
+- **Nueve calculadoras:** inflación, regla 50/30/20, pago mínimo de tarjeta, meta de ahorro, carga financiera, días de caja, gasto anualizado, IVA del mes y cuota de crédito. Las fórmulas se revisaron a mano una por una.
 - **Lista de módulos** con el estado de cada uno y acceso directo al siguiente al terminar.
 - **Modo claro y oscuro** con el sistema visual de pymedu.cl: Manrope, Material Symbols y los mismos colores.
 - **Progreso guardado** en el navegador: al volver, cada módulo sigue donde quedó.
 - **Funciona en teléfono.** Se revisó a 375 px de ancho.
 - **Publicado** en GitHub Pages, con aviso para que los buscadores no lo indexen.
+
+### Hallazgos de auditoría ya corregidos
+
+El 2026-09-28 se hizo una auditoría técnica del reproductor. Se corrigió lo que afectaba directamente a la escritura de los niveles nuevos:
+
+| Hallazgo | Qué se hizo |
+|---|---|
+| Contraste insuficiente en modo claro (A1, A2) | Se oscureció el dorado de texto hasta superar el mínimo legible. Afectaba a la etiqueta de sección y al aviso de respuesta incorrecta, presentes en casi todas las pantallas. |
+| El validador no detectaba ids repetidos dentro de una pantalla (L2) | Ahora los revisa en preguntas, opciones, pares, tarjetas y campos, y además comprueba que no haya dos lecciones con el mismo id. |
+| Las flechas del teclado saltaban de pantalla durante una actividad (L1) | Ahora solo navegan cuando no hay nada enfocado. |
+| Sin pantalla de recuperación ante un error (F2) | Se agregó una: en vez de quedar en blanco, ofrece volver a los módulos. |
+| "Responder de nuevo" no guardaba el reinicio (F4) | Ahora sí: al salir y volver no reaparece la respuesta anterior. |
+| Los simuladores daban veredictos extremos con campos vacíos (F6) | Ahora muestran "Falta un dato" en vez de un diagnóstico. |
+| Sin límites en los campos numéricos (L4) | Se acotaron montos y tasas. |
+| El título de la pestaña nunca cambiaba (F5) | Ahora muestra el módulo abierto. |
+| Accesibilidad del foco y de las ayudas de campo (A3, A4, A6) | El foco va al título al cambiar de pantalla, los ítems bloqueados del índice explican por qué, y las ayudas de los campos quedaron asociadas a su casilla. |
+
+**Pendientes de esa auditoría:** F1 (el botón "atrás" del navegador sale de la aplicación), F3 (los puntos de navegación se ocultan en móvil) y S1 a S3, que son los que hay que resolver antes de cualquier integración real con el ERP.
+
+**Sobre el hallazgo S5:** los casos de negocio de todos los módulos son ficticios, inventados para el curso. No se basan en personas reales.
 
 ### Lo que se verificó
 
@@ -144,16 +164,15 @@ La pregunta más importante de esta ronda es la 9 de la guía: **¿se lo mostrar
 
 ### Segunda etapa
 
-9. **Niveles 2 y 3.** Los PDF ya están y el reproductor tiene casi todo lo necesario. Hay tres cosas nuevas:
-   - **Revisión tributaria obligatoria** para los módulos 2.4 (formalización), 2.5 (IVA y Formulario 29) y 3.1 (contabilidad). Un error ahí le cuesta plata a un emprendedor.
-   - **Calculadoras nuevas:** punto de equilibrio, flujo de caja proyectado, y VAN y TIR.
-   - **Elegir entre niveles.** Con tres niveles, la lista de módulos deja de alcanzar. Es el primer paso real hacia un catálogo y conviene decidirlo con lo que diga el equipo.
+9. **Nivel 3.** Seis módulos: contabilidad básica, flujo proyectado y punto de equilibrio, VAN y TIR, créditos y leasing, inversión inicial y retorno, y una certificación final de 15 preguntas. Hay dos cosas nuevas:
+   - **Calculadoras:** punto de equilibrio, flujo de caja proyectado, y VAN y TIR. Se agregan igual que las nueve existentes.
+   - **La certificación final** es un formato distinto de los quiz actuales: 15 preguntas de varios módulos con un diploma al final. Hay que decidir si se implementa y qué significa "aprobar".
 10. **Publicación automática.** Correr `gh auth refresh -s workflow` para dar el permiso que falta y agregar un workflow de GitHub Actions que publique en cada push a `main`. Elimina el paso manual y el riesgo de olvidarlo.
 11. **Medición básica.** Saber en qué pantalla abandona la gente y qué preguntas fallan más. Antes hay que decidir la herramienta y cómo se informa a los usuarios.
 
 ### La decisión estratégica pendiente
 
-12. **Cómo se relaciona con el ERP.** Es la decisión que más afecta todo lo demás. Las alternativas van desde un simple link desde el panel de pymedu.cl hasta integrarlo dentro del ERP, con el mismo login y el progreso guardado en su base de datos.
+12. **Cómo se relaciona con el ERP.** Decidido el 2026-10-16: se integra **mediante un enlace** desde pymedu.cl hacia este sitio, que sigue siendo una aplicación aparte. Queda abierta la posibilidad de integrarlo de verdad más adelante.
     - **Integrarlo** resuelve las cuentas y el progreso entre dispositivos, y abre la posibilidad más interesante del proyecto: que las lecciones usen los datos reales del negocio del usuario, por ejemplo calcular su carga financiera con sus propios números del ERP en vez de números inventados.
     - **Costo de integrarlo:** pymedu.cl está hecho con Tailwind y este proyecto con CSS plano. Integrarlos obliga a elegir uno de los dos. Los colores, la tipografía y los componentes ya coinciden visualmente, así que el trabajo es de código, no de diseño.
 

@@ -45,7 +45,11 @@ export function Aplicar({ pantalla, respuesta, alResolver, alGuardar }: Props) {
             <label className="campo__etiqueta" htmlFor={campo.id}>
               {campo.etiqueta}
             </label>
-            {campo.ayuda && <span className="campo__ayuda">{campo.ayuda}</span>}
+            {campo.ayuda && (
+              <span className="campo__ayuda" id={`${campo.id}-ayuda`}>
+                {campo.ayuda}
+              </span>
+            )}
 
             {campo.formato === 'monto' ? (
               <div className="campo__monto">
@@ -58,6 +62,7 @@ export function Aplicar({ pantalla, respuesta, alResolver, alGuardar }: Props) {
                   inputMode="numeric"
                   autoComplete="off"
                   placeholder="0"
+                  aria-describedby={campo.ayuda ? `${campo.id}-ayuda` : undefined}
                   value={valores[campo.id] ?? ''}
                   onChange={(e) => cambiar(campo.id, e.target.value, 'monto')}
                 />
@@ -67,6 +72,7 @@ export function Aplicar({ pantalla, respuesta, alResolver, alGuardar }: Props) {
                 id={campo.id}
                 className="campo__entrada"
                 rows={3}
+                aria-describedby={campo.ayuda ? `${campo.id}-ayuda` : undefined}
                 value={valores[campo.id] ?? ''}
                 onChange={(e) => cambiar(campo.id, e.target.value, 'texto')}
               />

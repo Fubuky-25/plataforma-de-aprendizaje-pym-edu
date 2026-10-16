@@ -78,6 +78,25 @@ Las cinco calculadoras se verificaron a mano contra su fórmula. La de pago mín
 - **Los casos son nuevos.** Los módulos 1.3, 1.5 y 1.6 piden "casos prácticos" sin desarrollarlos. Se escribieron tres: Rodrigo y tres compras en un mes, Patricia y el refrigerador de su almacén, Camila y un crédito del que se arrepintió.
 - **El ejercicio de la UF se planteó como comparación, no como conclusión.** El material podía leerse como "la UF conviene". Depende de si pagas o recibes, y así quedó redactado.
 
+### Nivel 2 — Gestión del emprendimiento
+
+Convertido el 2026-10-16. Seis módulos, 54 pantallas, unos 83 minutos.
+
+| Módulo | Pantallas | Actividades | Calculadora |
+|---|---|---|---|
+| 2.1 El flujo de caja de tu negocio | 10 | Tarjetas, caso, emparejar, aplícalo, quiz | Días de caja, con semáforo |
+| 2.2 Gasto inteligente y control de costos | 9 | Tarjetas, emparejar, quiz | Un gasto chico visto a un año |
+| 2.3 Herramientas digitales para gestionar | 8 | Tarjetas, comparación, caso, quiz | — |
+| 2.4 Formalizar tu emprendimiento | 9 | Comparación, tarjetas, caso, aplícalo, quiz | — |
+| 2.5 IVA y Formulario 29 | 9 | Tarjetas, caso, quiz | IVA del mes (débito, crédito, remanente) |
+| 2.6 Deuda saludable y financiamiento | 9 | Tarjetas, comparación, caso, quiz | Cuota de un crédito |
+
+El material del Nivel 2 traía las evaluaciones como **preguntas abiertas**, no de alternativas. Se convirtieron a selección múltiple para que el reproductor pueda corregirlas y explicar el porqué, que es donde está el aprendizaje.
+
+Los tres casos de negocio del nivel son texto nuevo: Hugo y su imprenta con facturas a 60 días, Ximena y su distribuidora sin registros, Daniela y la boleta del horno, Nicolás y el contrato que le exige factura, y Mónica y el horno que financia un contrato nuevo.
+
+**Riesgo específico de este nivel:** los módulos 2.4 y 2.5 tocan materia legal y tributaria. El 2.5 cita plazos de declaración, porcentajes de multa e intereses que el material fecha en 2025 y que no se pudieron verificar. Están presentados como lo que decía el material, con la indicación explícita de confirmar en sii.cl, pero **ninguno de los dos módulos debería mostrarse a un usuario real sin revisión profesional**.
+
 ### Correcciones y omisiones respecto del material
 
 Cambios deliberados que conviene que el equipo conozca:
@@ -89,6 +108,10 @@ Cambios deliberados que conviene que el equipo conozca:
 | 1.5 | La Ley de Insolvencia permite renegociar "sin perder tus bienes" | Se reemplazó por una descripción general del procedimiento y la indicación de informarse. Como afirmación general no es exacta. |
 | 1.6 | Finanzas abiertas "a partir de 2026", registro de deuda "en preparación para 2025", neobanco con licencia "a fines de 2025" | Se redactó como lo que estaba previsto cuando se escribió el material, con una nota que pide verificar el estado actual. |
 | 1.6 | Derecho a retracto de 10 días en créditos de consumo | Se mantiene la cifra del material, pero se indica que las condiciones dependen del producto y hay que verificarlas. Un plazo mal citado puede costarle un derecho a alguien. |
+| 2.1, 2.3 | Programas estatales con sus montos y condiciones ("hasta $500.000", "TPM + 5 %", "cobertura 95 %") | Se nombran los programas pero sin condiciones exactas, y se remite a confirmar lo vigente. Cambian todos los años y el material es de 2025. |
+| 2.3 | Siete productos comerciales recomendados por nombre | Se reemplazaron por categorías de herramienta y criterios para elegir. PymEdu es un ERP: recomendar competidores en su propio curso es una decisión comercial del equipo, no del contenido. Además, una lista de productos envejece mal. |
+| 2.4 | "Los socios no comprometen su patrimonio personal" | Se matizó: la responsabilidad limitada existe pero tiene excepciones, y se cae si el dueño firma personalmente como aval, que es lo que suelen pedir los bancos. |
+| 2.5 | Plazos del F29 y multas, "actualizado a 2025" | Se mantienen como dato del material con su fecha, nunca como vigentes, y cada pantalla remite a sii.cl. La tasa de IVA quedó como campo editable del simulador en vez de fija en el código. |
 
 ---
 

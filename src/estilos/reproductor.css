@@ -186,7 +186,7 @@
 .indice__numero {
   font-size: var(--t-mini);
   font-weight: 700;
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   width: 1.4rem;
   flex-shrink: 0;
 }
@@ -294,14 +294,14 @@
 }
 
 .nota .icono {
-  color: var(--color-secondary);
+  color: var(--color-on-secondary-container);
 }
 
 /* Cifra con su fecha: en educación financiera el dato sin fecha engaña. */
 .fuente {
   margin-top: var(--e5);
   font-size: var(--t-mini);
-  color: var(--color-outline);
+  color: var(--color-on-surface-variant);
   max-width: var(--medida-lectura);
 }
 

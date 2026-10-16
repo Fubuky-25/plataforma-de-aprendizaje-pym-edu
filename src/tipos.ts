@@ -146,12 +146,40 @@ export interface SimuladorCarga extends SimuladorBase {
   inicial: { ingreso: number; cuotas: number }
 }
 
+export interface SimuladorDiasDeCaja extends SimuladorBase {
+  calculo: 'diasDeCaja'
+  etiquetas: { saldo: string; gastoMensual: string }
+  inicial: { saldo: number; gastoMensual: number }
+}
+
+export interface SimuladorGastoAnual extends SimuladorBase {
+  calculo: 'gastoAnual'
+  etiquetas: { montoMensual: string }
+  inicial: { montoMensual: number }
+}
+
+export interface SimuladorIva extends SimuladorBase {
+  calculo: 'iva'
+  etiquetas: { ventas: string; compras: string; tasa: string }
+  inicial: { ventas: number; compras: number; tasa: number }
+}
+
+export interface SimuladorCuota extends SimuladorBase {
+  calculo: 'cuotaCredito'
+  etiquetas: { monto: string; tasaAnual: string; meses: string }
+  inicial: { monto: number; tasaAnual: number; meses: number }
+}
+
 export type PantallaSimulador =
   | SimuladorInflacion
   | SimuladorRegla
   | SimuladorPagoMinimo
   | SimuladorMeta
   | SimuladorCarga
+  | SimuladorDiasDeCaja
+  | SimuladorGastoAnual
+  | SimuladorIva
+  | SimuladorCuota
 
 /** El usuario aplica lo aprendido a su propio negocio. No se corrige. */
 export interface PantallaAplicar extends Base {
@@ -210,6 +238,15 @@ export interface Leccion {
   /** De dónde salen las cifras. Se muestran al cerrar la lección. */
   fuentes?: string[]
   pantallas: Pantalla[]
+}
+
+/** Un nivel del programa: un conjunto ordenado de lecciones. */
+export interface Nivel {
+  id: string
+  titulo: string
+  subtitulo: string
+  descripcion: string
+  lecciones: Leccion[]
 }
 
 /** Lo que se guarda en el navegador para poder retomar la lección. */

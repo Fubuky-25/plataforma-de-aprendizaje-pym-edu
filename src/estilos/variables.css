@@ -24,7 +24,10 @@
   --color-secondary: #c5a059;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #e8d4a0;
-  --color-on-secondary-container: #8a6e2f;
+  /* Oscurecido respecto del sitio: #8a6e2f sobre el dorado daba 3,2:1 y el mínimo es 4,5:1. */
+  /* Más oscuro que en el sitio: el #8a6e2f original sobre el dorado daba
+     3,2:1 y el mínimo legible para texto chico es 4,5:1. */
+  --color-on-secondary-container: #6b5522;
 
   --color-tertiary: #3f2427;
   --color-tertiary-container: #ffd9dd;
@@ -58,7 +61,7 @@
   --color-exito-outline: #8fb69d;
 
   /* Respuesta incorrecta y avisos. Usa el dorado de la marca, no rojo. */
-  --color-atencion: #8a6e2f;
+  --color-atencion: #6b5522;
   --color-atencion-container: #f6ebd5;
   --color-atencion-outline: #d9bd7d;
 

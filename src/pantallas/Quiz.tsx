@@ -60,6 +60,8 @@ export function Quiz({ pantalla, respuesta, alResolver, alGuardar }: Props) {
     setElegida(null)
     setEnviada(false)
     setTerminado(false)
+    // Se guarda el reinicio, no solo se limpia en pantalla: si no, al salir y
+    // volver reaparecerían las respuestas anteriores.
     alGuardar({})
   }
 

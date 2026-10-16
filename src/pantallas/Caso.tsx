@@ -40,6 +40,9 @@ export function Caso({ pantalla, respuesta, alResolver, alGuardar }: Props) {
   function intentarDeNuevo() {
     setMarcadas([])
     setEnviada(false)
+    // Se guarda el reinicio, no solo se limpia en pantalla: si no, al salir y
+    // volver reaparecería la respuesta anterior.
+    alGuardar([])
   }
 
   return (

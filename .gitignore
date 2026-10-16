@@ -11,3 +11,10 @@ contenido para los cursos/
 
 # Artefactos de compilación de TypeScript.
 *.tsbuildinfo
+
+# Auditorías de seguridad. NO subir a un repositorio público: describen
+# vulnerabilidades sin corregir de un sistema en producción con datos reales.
+# Compartirlas solo por un canal privado con quien deba repararlas.
+docs/05-auditoria-tecnica.md
+docs/06-auditoria-pymedu-cl-vivo.md
+docs/informe-auditoria-pymedu.docx
