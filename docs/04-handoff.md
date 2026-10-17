@@ -1,77 +1,98 @@
 # Handoff: plataforma de aprendizaje PymEdu
 
-Estado al 2026-10-16 y pasos para seguir avanzando.
+Documento para retomar el proyecto desde cero, sin contexto previo.
+Estado al 2026-10-16.
 
 | | |
 |---|---|
 | **Sitio de prueba** | https://fubuky-25.github.io/plataforma-de-aprendizaje-pym-edu/ |
 | **Repositorio** | https://github.com/Fubuky-25/plataforma-de-aprendizaje-pym-edu (público) |
 | **Guía para el equipo** | [guia-revision-equipo.md](guia-revision-equipo.md) |
+| **Carpeta de trabajo** | `C:\Users\sergi\Desktop\Plataforma_educativa` |
 
 ---
 
-## 1. En qué punto estamos
+## 1. Qué es este proyecto
 
-Existe una **versión de prueba publicada** con los tres niveles del programa de PymEdu, lista para que el equipo la revise y opine. Falta solo la certificación final del material.
+**PymEdu ya existe** como ERP para micro y pequeñas empresas chilenas, en
+[pymedu.cl](https://www.pymedu.cl): dashboard, ventas y gastos, inventario,
+remuneraciones, F29, asistente con IA, backend en Supabase, planes de pago.
 
-Es un reproductor de lecciones interactivas, no la plataforma completa. PymEdu ya existe como ERP en pymedu.cl; este proyecto es su componente educativo. Se decidió que se integre **mediante un enlace desde el ERP** hacia este sitio, que sigue siendo una aplicación aparte; integrarlo dentro del ERP mismo queda como posibilidad futura.
+**Este proyecto es su componente educativo**: un reproductor de lecciones
+interactivas de educación financiera. No es la plataforma completa ni toca el
+ERP. Se decidió que se integre **mediante un enlace** desde pymedu.cl hacia este
+sitio, que sigue siendo una aplicación aparte.
+
+El contenido viene de tres PDF entregados por PymEdu, en
+`contenido para los cursos/`: tres niveles de seis módulos cada uno.
+
+### De dónde salió el diseño
+
+El equipo mostró capturas de un curso corporativo de inducción en gestión de
+riesgos que les gustó. Al analizarlas se encontró algo importante: **no era una
+plataforma, era un solo curso dentro de un LMS ajeno**. Cubría la capa "dentro
+de la lección" y nada más. Eso definió el alcance.
+
+El sistema visual, en cambio, **no** salió de esa referencia: se leyeron
+directamente los tokens de color, la tipografía y los componentes de pymedu.cl.
+El análisis completo está en [01-analisis-referencia.md](01-analisis-referencia.md).
+
+---
+
+## 2. En qué punto está
 
 ### Lo que funciona
 
-- **Los tres niveles:** diecisiete módulos, 154 pantallas, unas 4 horas de contenido, con un selector para cambiar de nivel.
-- **Diez tipos de pantalla:** portada, lectura, tarjetas que se revelan, comparación, caso de negocio, emparejar, calculadora, aplícalo a tu negocio, evaluación y cierre.
-- **Doce calculadoras:** inflación, regla 50/30/20, pago mínimo de tarjeta, meta de ahorro, carga financiera, días de caja, gasto anualizado, IVA del mes, cuota de crédito, punto de equilibrio, flujo proyectado a seis meses y evaluación de inversión con VAN, TIR, Payback y ROI. Las fórmulas se revisaron a mano una por una.
-- **Lista de módulos** con el estado de cada uno y acceso directo al siguiente al terminar.
-- **Modo claro y oscuro** con el sistema visual de pymedu.cl: Manrope, Material Symbols y los mismos colores.
-- **Progreso guardado** en el navegador: al volver, cada módulo sigue donde quedó.
-- **Funciona en teléfono.** Se revisó a 375 px de ancho.
-- **Publicado** en GitHub Pages, con aviso para que los buscadores no lo indexen.
+- **Los tres niveles completos:** 17 módulos, 154 pantallas, unas 4 horas de
+  contenido. Falta solo la certificación final del material (módulo 3.6).
+- **Diez tipos de pantalla:** portada, contenido, tarjetas que se revelan,
+  comparación, caso de negocio, emparejar, calculadora, aplícalo a tu negocio,
+  evaluación y cierre.
+- **Doce calculadoras**, todas con la fórmula verificada a mano contra el
+  resultado en pantalla: inflación, regla 50/30/20, pago mínimo de tarjeta,
+  meta de ahorro, carga financiera con semáforo, días de caja, gasto anualizado,
+  IVA del mes, cuota de crédito, punto de equilibrio, flujo proyectado a seis
+  meses, y evaluación de inversión con VAN, TIR, Payback y ROI.
+- **Lista de módulos** con selector de nivel, estado de cada módulo y acceso
+  directo al siguiente al terminar uno.
+- **Modo claro y oscuro** con el sistema visual de pymedu.cl.
+- **Progreso guardado** en el navegador, por módulo.
+- **Funciona en teléfono.** Revisado a 375 px.
+- **Publicado** en GitHub Pages, con `noindex` mientras el contenido no esté
+  validado.
 
-### Hallazgos de auditoría ya corregidos
+### Inventario por nivel
 
-El 2026-09-28 se hizo una auditoría técnica del reproductor. Se corrigió lo que afectaba directamente a la escritura de los niveles nuevos:
+| Nivel | Módulos | Pantallas | Minutos | Temas |
+|---|---|---|---|---|
+| 1 · Fundamentos de educación financiera | 6 | 55 | ~78 | Inflación y UF, presupuesto, tarjetas, ahorro, sobreendeudamiento, sistema financiero |
+| 2 · Gestión del emprendimiento | 6 | 54 | ~83 | Flujo de caja, costos, herramientas digitales, formalización, IVA y F29, financiamiento |
+| 3 · Decisiones avanzadas | 5 | 45 | ~77 | Contabilidad, punto de equilibrio, VAN/TIR/Payback/ROI, fuentes de financiamiento, inversión inicial |
 
-| Hallazgo | Qué se hizo |
-|---|---|
-| Contraste insuficiente en modo claro (A1, A2) | Se oscureció el dorado de texto hasta superar el mínimo legible. Afectaba a la etiqueta de sección y al aviso de respuesta incorrecta, presentes en casi todas las pantallas. |
-| El validador no detectaba ids repetidos dentro de una pantalla (L2) | Ahora los revisa en preguntas, opciones, pares, tarjetas y campos, y además comprueba que no haya dos lecciones con el mismo id. |
-| Las flechas del teclado saltaban de pantalla durante una actividad (L1) | Ahora solo navegan cuando no hay nada enfocado. |
-| Sin pantalla de recuperación ante un error (F2) | Se agregó una: en vez de quedar en blanco, ofrece volver a los módulos. |
-| "Responder de nuevo" no guardaba el reinicio (F4) | Ahora sí: al salir y volver no reaparece la respuesta anterior. |
-| Los simuladores daban veredictos extremos con campos vacíos (F6) | Ahora muestran "Falta un dato" en vez de un diagnóstico. |
-| Sin límites en los campos numéricos (L4) | Se acotaron montos y tasas. |
-| El título de la pestaña nunca cambiaba (F5) | Ahora muestra el módulo abierto. |
-| Accesibilidad del foco y de las ayudas de campo (A3, A4, A6) | El foco va al título al cambiar de pantalla, los ítems bloqueados del índice explican por qué, y las ayudas de los campos quedaron asociadas a su casilla. |
-
-**Corregidos el 2026-10-16, al convertir el Nivel 3:**
-
-| Hallazgo | Qué se hizo |
-|---|---|
-| El botón "atrás" del navegador salía de la aplicación (F1) | Cada avance deja una entrada en el historial. Probado: desde la pantalla 3 el botón lleva a la 2, luego a la 1 y luego a la lista de módulos. |
-| Los puntos de navegación desaparecían en móvil (F3) | Ahora pasan a una fila propia sobre los botones, en tamaño reducido, en vez de ocultarse. |
-| Datos del negocio en el navegador sin forma de borrarlos (S1) | Hay un botón "Borrar mis datos de este dispositivo" al pie de la lista de módulos, con confirmación, junto a una explicación de qué se guarda. |
-| Sin política de seguridad de contenido (S2) | Se agregó por `<meta>`. Para no debilitarla con `unsafe-inline`, el script que fija el tema se movió a su propio archivo. |
-| Sin enlace para saltar al contenido (A5) | Agregado: aparece al navegar con teclado. |
-| `npm audit` sin ejecutar (S4) | Ejecutado: cero vulnerabilidades. Las dependencias de producción siguen siendo solo `react` y `react-dom`. |
-
-**Pendientes de esa auditoría:** S3 (la dependencia de Google Fonts entrega la IP del visitante a Google) y la parte de S1 que corresponde al cifrado, que solo tiene sentido resolver si algún día se integra con cuentas reales.
-
-**Sobre el hallazgo S5:** los casos de negocio de todos los módulos son ficticios, inventados para el curso. No se basan en personas reales.
+El detalle módulo por módulo está en
+[03-programa-y-contenido.md](03-programa-y-contenido.md).
 
 ### Lo que se verificó
 
-- TypeScript compila sin errores.
-- `npm run validar` revisa los datos de las seis lecciones y no encuentra problemas.
-- En el sitio publicado: carga sin errores, abre los módulos, avanza entre pantallas y los iconos y la tipografía cargan bien.
-- En local: se recorrieron el paso de la lista a un módulo, de un módulo al siguiente y la vuelta a la lista, con los estados actualizándose. Las cinco calculadoras dan resultados correctos.
+- TypeScript compila sin errores y `npm run validar` pasa en los 17 módulos.
+- Las doce calculadoras dan resultados correctos, comprobados contra el cálculo
+  hecho a mano. Los números de los ejemplos del texto coinciden con lo que
+  entrega el simulador si el usuario los escribe.
+- En el sitio publicado: carga sin errores de consola, los tres niveles
+  aparecen, se abren módulos y se avanza entre pantallas, y la tipografía y los
+  iconos cargan.
+- El botón "atrás" del navegador retrocede de pantalla y termina en la lista.
+- `npm audit`: cero vulnerabilidades.
 
-**Lo que no se recorrió pantalla por pantalla:** las actividades de los módulos 1.2 a 1.6. Usan los mismos componentes ya probados en el 1.1 y los datos pasan la validación, pero nadie las ha completado de principio a fin. La ronda de revisión del equipo sirve también para eso.
+**Lo que NO se verificó:** no se recorrió cada actividad de los 17 módulos
+haciendo clic una por una. Usan componentes ya probados y los datos pasan la
+validación, pero nadie completó el programa entero de principio a fin.
 
 ---
 
-## 2. Cómo se trabaja en el proyecto
+## 3. Cómo trabajar en el proyecto
 
-Requiere Node.js. Desde la carpeta del proyecto:
+Requiere Node.js.
 
 ```bash
 npm install
@@ -83,136 +104,269 @@ npm run dev
 
 | Comando | Qué hace |
 |---|---|
-| `npm run dev` | Levanta el proyecto en `http://localhost:5173` para trabajar. |
-| `npm run validar` | Revisa los datos de las lecciones: alternativas correctas, casos, comparaciones. |
+| `npm run dev` | Levanta el proyecto en `http://localhost:5173`. |
+| `npm run validar` | Revisa los datos de las lecciones: una sola alternativa correcta por pregunta, ids únicos, celdas completas en comparaciones. |
 | `npm run build` | Compila y verifica tipos. |
 | `npm run publicar` | Compila y sube el sitio a GitHub Pages. |
 
-### Publicar un cambio
+### Trampas que conviene saber de antemano
 
-**Hacer push a `main` no actualiza el sitio.** Guarda el código, pero el sitio publicado solo cambia al correr `npm run publicar`. Es lo primero que confunde a quien llega nuevo.
+1. **Hacer push a `main` NO actualiza el sitio.** El sitio solo cambia con
+   `npm run publicar`, que sube a la rama `gh-pages`. Es lo primero que
+   confunde a quien llega nuevo.
+2. **Las auditorías de seguridad no están en el repositorio.** Hay dos
+   documentos, `docs/05-auditoria-tecnica.md` y
+   `docs/06-auditoria-pymedu-cl-vivo.md`, más un `.docx`, que están en el
+   `.gitignore` a propósito: el segundo describe vulnerabilidades **sin
+   corregir del sitio en producción** y el repositorio es público. Existen solo
+   en el computador de trabajo. Si hay que compartirlos, por canal privado.
+3. **No se pueden agregar scripts en línea en `index.html`.** La política de
+   seguridad de contenido los prohíbe. Por eso el script que fija el tema vive
+   en `public/tema.js`.
+4. **Si pruebas `BASE_PATH` desde Git Bash**, usa `MSYS_NO_PATHCONV=1` o la
+   ruta se convierte en una ruta de Windows y el build sale mal. El script de
+   publicación no tiene ese problema porque define la variable desde Node.
+5. **La rama `gh-pages` no se edita a mano.** Se reemplaza entera en cada
+   publicación.
+
+### Flujo para publicar un cambio
 
 1. Hacer el cambio.
-2. Correr `npm run validar`.
-3. Hacer commit y push a `main`.
-4. Correr `npm run publicar`.
+2. `npm run validar`.
+3. Commit y push a `main`.
+4. `npm run publicar`.
 5. Esperar uno o dos minutos y revisar el link.
 
-El script sube a la rama `gh-pages` solo el sitio compilado, reemplazándola entera. Esa rama no se edita a mano.
-
-### Cómo está armado
-
-Para quien retome, en este orden:
+### Orden de lectura para retomar
 
 1. `CLAUDE.md`: las reglas de trabajo del proyecto.
-2. `docs/02-decisiones.md`: qué se decidió y por qué.
-3. `docs/03-programa-y-contenido.md`: el programa de 18 módulos, qué está convertido y qué se cambió del material.
-4. Este documento.
+2. Este documento.
+3. [02-decisiones.md](02-decisiones.md): qué se decidió y por qué.
+4. [03-programa-y-contenido.md](03-programa-y-contenido.md): el programa y qué
+   se cambió del material original.
+5. `docs/05-auditoria-tecnica.md`, si está en el disco.
 
-La idea central de la arquitectura es que **el contenido vive en datos, no en código**. Cada lección es un archivo en `src/contenido/` que describe sus pantallas. El reproductor las lee y muestra el componente que corresponde a cada tipo. Cambiar un texto no requiere tocar ningún componente, y si algún día se cambia de tecnología, el contenido se conserva.
+---
+
+## 4. Cómo está armado
+
+La idea central: **el contenido vive en datos, no en código**. Cada lección es
+un archivo en `src/contenido/` que describe sus pantallas. El reproductor las
+lee y muestra el componente de cada tipo. Cambiar un texto no requiere tocar
+ningún componente, y si algún día se cambia de tecnología, el contenido se
+conserva.
+
+```
+src/
+  tipos.ts                     Estructura de datos de lecciones y niveles
+  App.tsx                      Dos vistas: lista de módulos o reproductor
+  ReporteDeError.tsx           Pantalla de recuperación ante un error de render
+  contenido/
+    n1-m*.ts, n2-m*.ts, n3-m*.ts   Una lección por archivo
+    nivel1.ts, nivel2.ts, nivel3.ts  Arman cada nivel
+    niveles.ts                 El programa completo y la búsqueda de lecciones
+  nivel/ListaModulos.tsx       Lista de módulos con selector de nivel
+  reproductor/                 Navegación, progreso, tema, historial
+  pantallas/                   Un componente por tipo de pantalla
+    simuladores/               Las doce calculadoras, en tres archivos
+  estilos/variables.css        Toda la paleta y tipografía, en los dos temas
+herramientas/
+  extraer-pdf.mjs              Saca el texto de los PDF del material
+  validar-contenido.mjs        `npm run validar`
+  publicar.mjs                 `npm run publicar`
+public/tema.js                 Fija el tema antes del primer pintado
+docs/                          Análisis, decisiones, programa, handoff, guía
+```
 
 | Si quieres... | Se hace en |
 |---|---|
-| Cambiar un texto de una lección | `src/contenido/n1-m*.ts` |
-| Agregar una lección al nivel | Crear el archivo en `src/contenido/` y sumarlo en `src/contenido/nivel1.ts` |
-| Cambiar colores o tipografía | `src/estilos/variables.css`, en un solo lugar para los dos temas |
-| Agregar un tipo de pantalla | `src/tipos.ts`, un componente en `src/pantallas/` y un caso en `src/pantallas/VistaPantalla.tsx` |
-| Agregar una calculadora | Un caso en `src/tipos.ts` y su función en `src/pantallas/simuladores/Calculadoras.tsx` |
+| Cambiar un texto de una lección | `src/contenido/nX-mY-*.ts` |
+| Agregar una lección a un nivel | Crear el archivo y sumarlo en `src/contenido/nivelX.ts` |
+| Agregar un nivel | Crear `nivelX.ts` y sumarlo en `src/contenido/niveles.ts` |
+| Cambiar colores o tipografía | `src/estilos/variables.css`, un solo lugar para ambos temas |
+| Agregar un tipo de pantalla | `src/tipos.ts`, un componente en `src/pantallas/` y un caso en `VistaPantalla.tsx` |
+| Agregar una calculadora | Un caso en la unión de `src/tipos.ts`, su componente en `src/pantallas/simuladores/` y un caso en `Simulador.tsx` |
 
-**Stack:** React, TypeScript y CSS plano, compilado con Vite. Cuatro dependencias. Los lenguajes son HTML, CSS y JavaScript; se evitó a propósito sumar herramientas con vocabulario propio, como Tailwind.
+**Stack:** React, TypeScript y CSS plano, compilado con Vite. Cuatro
+dependencias. Los lenguajes son HTML, CSS y JavaScript; se evitó a propósito
+sumar herramientas con vocabulario propio, como Tailwind, por pedido explícito
+del dueño del proyecto.
 
 ---
 
-## 3. Lo que no está resuelto
+## 5. Reglas de contenido
 
-Límites conocidos. Nada de esto impide la ronda de revisión, pero todo importa antes de mostrarlo a clientes.
+Esto es lo más importante para quien escriba o actualice lecciones. No son
+preferencias de estilo: son decisiones tomadas por razones concretas.
 
-### Contenido
+1. **Toda cifra lleva su fecha a la vista.** El material es de 2024 y 2025. Un
+   dato financiero sin fecha se lee como vigente, y eso lleva a decisiones
+   equivocadas con plata real. Usa el campo `fuente` de la pantalla.
+2. **Nunca afirmar plazos, multas ni condiciones de programas como vigentes.**
+   Se presentan como "lo que decía el material en 2025" y se remite a la fuente
+   oficial: sii.cl, bcentral.cl, cmfchile.cl, corfo.cl, sercotec.cl.
+3. **Suavizar las afirmaciones legales absolutas.** El material decía que en
+   una persona jurídica los socios "no comprometen su patrimonio personal". Eso
+   no es exacto: tiene excepciones y se cae si el dueño firma como aval.
+4. **No nombrar productos comerciales.** PymEdu es un ERP; recomendar
+   competidores en su propio curso es una decisión comercial del equipo, no del
+   contenido. Se enseñan categorías y criterios de elección.
+5. **Los casos de negocio son ficticios.** Todos inventados para el curso, no
+   se basan en personas reales.
+6. **Las evaluaciones del material venían como preguntas abiertas.** Se
+   convirtieron a selección múltiple para que el reproductor pueda corregir y
+   explicar el porqué, que es donde está el aprendizaje.
+7. **Si el material tiene un error, se corrige y se explica.** Pasó en el
+   módulo 3.5: el ejemplo trataba el aumento de ventas como si fuera utilidad.
+   Se corrigió usando margen de contribución y el error se convirtió en el
+   contenido central de una pantalla.
+8. **Registrar cada cambio deliberado** en la sección 2 de
+   [03-programa-y-contenido.md](03-programa-y-contenido.md).
 
-- **Cifras desactualizadas.** Inflación y tasas de 2025, datos de deuda de la CMF de junio de 2024. Cada cifra aparece con su fecha, pero hay que reemplazarlas. El detalle está en `docs/03`, sección 3.
-- **Respuestas deducidas.** El material no marcaba las alternativas correctas de las evaluaciones, así que se dedujeron del contenido.
-- **Texto nuevo.** Las explicaciones de cada pregunta y los tres casos de negocio (Rodrigo, Patricia y Camila) no venían en el material.
-- **Cambios al material.** Hay cinco cambios deliberados, listados en `docs/03`, sección 2.
-- **Módulo 1.6.** Menciona procesos que en 2025 estaban por venir: finanzas abiertas, registro de deuda consolidada y neobancos. Hay que verificar en qué están hoy.
-- **Revisión legal.** Nadie competente ha revisado lo legal: el derecho a retracto (1.6) y el procedimiento de insolvencia (1.5).
+---
+
+## 6. Decisiones ya tomadas
+
+Para no volver a discutirlas. El detalle y los motivos están en
+[02-decisiones.md](02-decisiones.md).
+
+| Decisión | Resultado |
+|---|---|
+| Alcance | El reproductor de lecciones, no la plataforma completa |
+| Stack | React + TypeScript + CSS plano con Vite. Sin Tailwind |
+| Cuentas y backend | No hay. Progreso en `localStorage` |
+| Identidad visual | Tomada de pymedu.cl, no inventada ni copiada de la referencia |
+| Dispositivos | Escritorio para el equipo, móvil para el usuario final |
+| Bloqueo de avance | Solo en caso, emparejar y evaluación. Se resuelve al responder, se acierte o no |
+| Publicación | Repositorio público y GitHub Pages, publicación manual |
+| Integración con el ERP | Enlace desde pymedu.cl a este sitio aparte |
+| Niveles | Los tres convertidos. La certificación final queda para definir con el equipo |
+
+Dos diferencias deliberadas con pymedu.cl, por accesibilidad: el texto del
+botón principal en modo oscuro va oscuro y no blanco, y el error en las
+respuestas se marca en dorado y no en rojo.
+
+---
+
+## 7. Lo que no está resuelto
+
+### Contenido, lo más urgente
+
+- **Las cifras están desactualizadas.** Inflación y tasas de 2025, datos de la
+  CMF de junio de 2024, tasa de política monetaria de octubre de 2025, plazos
+  de pago a pymes de 2025. Todas aparecen con su fecha, pero hay que
+  reemplazarlas.
+- **Nada tiene revisión profesional.** Los módulos 1.5, 1.6, 2.4, 2.5 y 3.1
+  tocan materia legal, tributaria y contable. **El 2.5 es el de mayor riesgo:**
+  cita plazos de declaración del F29 y porcentajes de multa.
+- **Las alternativas correctas se dedujeron.** El material no las marcaba en
+  ninguno de los 17 módulos.
+- **Las explicaciones y los casos son texto nuevo**, escritos para el curso.
+- **El módulo 1.6 habla de procesos que en 2025 estaban por venir:** finanzas
+  abiertas, registro de deuda consolidada, neobancos. Hay que verificar en qué
+  están hoy.
 
 ### Producto
 
-- **El progreso solo vive en el navegador.** Se pierde al cambiar de dispositivo o al borrar datos, y no hay forma de saber cómo le fue a cada persona.
-- **No hay medición.** No sabemos quién entra, dónde abandona ni qué pregunta falla más.
-- **El feedback no se recoge dentro de la plataforma.** Llega por fuera, respondiendo a quien compartió el link.
-- **El logo es provisional.** Es un mosaico con ícono que imita el del sitio.
+- El progreso vive solo en ese navegador. No se sincroniza ni se puede saber
+  cómo le fue a alguien.
+- No hay medición: no se sabe quién entra ni dónde abandona.
+- El feedback se recoge fuera de la plataforma.
+- El logo es provisional.
 
 ### Técnico
 
-- **La publicación es manual.** Automatizarla con GitHub Actions requiere un permiso de GitHub que la sesión actual no tiene. Ver el paso 10.
-- **No hay pruebas automáticas de la interfaz.** Existen la verificación de tipos y la validación de datos.
-- **Depende de Google Fonts.** Si la tipografía no carga, cae a la del sistema y todo sigue funcionando. **Si los iconos no cargan, aparece su nombre en texto** (por ejemplo, `arrow_forward`). Pasa en redes que bloquean Google.
-- **La accesibilidad está cuidada, pero no auditada.** Hay foco visible, se respeta el movimiento reducido y se revisó el contraste de los botones. No se probó con un lector de pantalla.
-- **El repositorio es público.** El código y los documentos de `docs/` son visibles para cualquiera. Las capturas de referencia y los PDF del material quedaron fuera.
+- La publicación es manual.
+- No hay pruebas automáticas de interfaz; sí verificación de tipos y validación
+  de datos.
+- Depende de Google Fonts. Si la tipografía no carga, cae a la del sistema; **si
+  los iconos no cargan, se ve su nombre en texto** (`arrow_forward`). Ocurre en
+  redes que bloquean Google. Pendiente S3 de la auditoría: esa dependencia
+  además entrega la IP del visitante a Google.
+- Accesibilidad cuidada pero no auditada con lector de pantalla real.
+- El repositorio es público: el código y `docs/` son visibles. Las capturas de
+  referencia y los PDF del material quedaron fuera.
 
 ---
 
-## 4. Pasos siguientes
+## 8. Pasos siguientes
 
-En orden. Cada bloque depende en parte del anterior.
+### Ahora: la ronda de revisión con el equipo
 
-### Ahora: la ronda de revisión
+1. Compartir el link y la [guía de revisión](guia-revision-equipo.md).
+2. Juntar las respuestas y clasificarlas: errores, problemas de uso, problemas
+   de contenido, ideas nuevas.
+3. Decidir qué se cambia antes de seguir. Una idea no queda aprobada solo
+   porque alguien la propuso ni porque ya esté implementada.
 
-1. **Compartir el link y la guía con el equipo.** El link va al sitio; la guía está en `docs/guia-revision-equipo.md` y también se puede leer desde GitHub.
-2. **Juntar las respuestas y clasificarlas** en cuatro grupos: errores, problemas de uso, problemas de contenido e ideas nuevas.
-3. **Decidir qué se cambia antes de seguir.** Según `CLAUDE.md`, una idea no queda aprobada solo porque alguien la propuso ni porque ya esté hecha.
-
-La pregunta más importante de esta ronda es la 9 de la guía: **¿se lo mostrarían hoy a un cliente?** La respuesta define si el siguiente paso es pulir el Nivel 1 o avanzar a los niveles 2 y 3.
+La pregunta que define todo lo demás es la 9 de la guía: **¿se lo mostrarían
+hoy a un cliente?**
 
 ### Antes de mostrarlo a usuarios reales
 
-4. **Actualizar las cifras** contra el INE, el Banco Central y la CMF. Están todas en `src/contenido/`, cada una con su fecha al lado.
-5. **Revisar las respuestas de las evaluaciones y los tres casos.** Lo puede hacer alguien del equipo con formación financiera.
-6. **Pedir revisión legal de los módulos 1.5 y 1.6** a alguien competente.
-7. **Poner el logo real.** Basta con entregar el archivo: el lugar ya está reservado en la barra superior.
-8. **Quitar el aviso para buscadores** (`noindex` en `index.html`) cuando el contenido esté validado.
+4. **Actualizar las cifras** contra INE, Banco Central y CMF.
+5. **Revisar las alternativas correctas y los casos** con alguien de formación
+   financiera.
+6. **Revisión legal y tributaria** de 1.5, 1.6, 2.4, 2.5 y 3.1. Prioridad: 2.5.
+7. **Validar la corrección del módulo 3.5**, donde el contenido se apartó del
+   material original.
+8. **Poner el logo real.** El lugar ya está reservado en la barra superior.
+9. **Quitar el `noindex`** de `index.html` cuando el contenido esté validado.
 
-### Segunda etapa
+### Después
 
-9. **La certificación final (módulo 3.6).** Es lo único que falta del material. Son 15 preguntas de todo el nivel avanzado con un diploma al terminar, y es un formato distinto de los quiz actuales. Antes de construirla hay que decidir con el equipo:
-   - Qué significa aprobar y qué pasa si no se aprueba.
-   - Si se puede reintentar, cuántas veces y si las preguntas cambian.
-   - Qué se entrega: un diploma descargable, un correo, algo visible en el ERP.
-   - Si el resultado tiene que quedar registrado en alguna parte, lo que obligaría a tener cuentas.
-10. **Publicación automática.** Correr `gh auth refresh -s workflow` para dar el permiso que falta y agregar un workflow de GitHub Actions que publique en cada push a `main`. Elimina el paso manual y el riesgo de olvidarlo.
-11. **Medición básica.** Saber en qué pantalla abandona la gente y qué preguntas fallan más. Antes hay que decidir la herramienta y cómo se informa a los usuarios.
+10. **La certificación final (módulo 3.6).** Lo único que falta del material:
+    15 preguntas de todo el nivel avanzado con un diploma. Antes de construirla
+    hay que decidir con el equipo:
+    - Qué significa aprobar y qué pasa si no se aprueba.
+    - Si se puede reintentar, cuántas veces y si las preguntas cambian.
+    - Qué se entrega: un diploma descargable, un correo, algo en el ERP.
+    - Si el resultado debe quedar registrado, lo que obligaría a tener cuentas.
+11. **Publicación automática.** Correr `gh auth refresh -s workflow` y agregar
+    un workflow de GitHub Actions que publique en cada push a `main`.
+12. **Medición básica.** Saber en qué pantalla abandona la gente y qué
+    preguntas fallan más. Decidir herramienta y cómo se informa a los usuarios.
+13. **Resolver los pendientes de auditoría** si se avanza hacia la integración:
+    S3 (Google Fonts) y el cifrado de los datos guardados.
 
-### La decisión estratégica pendiente
+### Futuro, solo con evidencia de que hace falta
 
-12. **Cómo se relaciona con el ERP.** Decidido el 2026-10-16: se integra **mediante un enlace** desde pymedu.cl hacia este sitio, que sigue siendo una aplicación aparte. Queda abierta la posibilidad de integrarlo de verdad más adelante.
-    - **Integrarlo** resuelve las cuentas y el progreso entre dispositivos, y abre la posibilidad más interesante del proyecto: que las lecciones usen los datos reales del negocio del usuario, por ejemplo calcular su carga financiera con sus propios números del ERP en vez de números inventados.
-    - **Costo de integrarlo:** pymedu.cl está hecho con Tailwind y este proyecto con CSS plano. Integrarlos obliga a elegir uno de los dos. Los colores, la tipografía y los componentes ya coinciden visualmente, así que el trabajo es de código, no de diseño.
-
-### Futuro (solo con evidencia de que hace falta)
-
-- Cuentas propias y progreso sincronizado entre dispositivos, si no se integra con el ERP.
-- Certificado al completar un nivel. El módulo 3.6 del material lo propone.
-- Puntos, insignias o rachas. A la referencia original le funcionaban, pero para este público pueden restar seriedad. Hay que decidirlo con lo que diga el equipo, no por defecto.
+- Integrar de verdad con el ERP: cuentas, progreso sincronizado y, lo más
+  interesante, lecciones que usen los datos reales del negocio del usuario en
+  vez de números de ejemplo. **Costo:** pymedu.cl usa Tailwind y este proyecto
+  CSS plano; habría que elegir uno. Lo visual ya coincide, así que el trabajo
+  es de código.
+- Puntos, insignias o rachas. A la referencia le funcionaban, pero este público
+  es distinto y puede restarle seriedad. Decidirlo con feedback, no por defecto.
 - Contenido en video o descargable.
 
 ---
 
-## 5. Decisiones que necesitan un responsable
+## 9. Decisiones que necesitan un responsable
 
-| Decisión | Quién podría tomarla | Qué bloquea |
+| Decisión | Quién | Qué bloquea |
 |---|---|---|
-| ¿Está listo para clientes? | El equipo, tras la revisión | Todo lo que va después del paso 3 |
+| ¿Está listo para clientes? | El equipo, tras la revisión | Todo lo demás |
 | Cifras actualizadas y respuestas revisadas | Alguien con formación financiera | Mostrarlo a usuarios reales |
-| Revisión legal de 1.5 y 1.6 | Asesoría legal | Mostrarlo a usuarios reales |
-| Revisión tributaria de los niveles 2 y 3 | Contador o asesor tributario | Publicar los niveles 2 y 3 |
-| Integración con el ERP | Producto y tecnología de PymEdu | Cuentas, progreso entre dispositivos, stack |
+| Revisión legal y tributaria | Contador y asesoría legal | Mostrarlo a usuarios reales |
+| Formato de la certificación final | Producto | Construir el módulo 3.6 |
+| Nombrar o no herramientas por marca | Comercial | El módulo 2.3 |
+| Integración real con el ERP | Producto y tecnología | Cuentas, progreso entre dispositivos, stack |
+| A quién se entregan las auditorías | Tecnología | Reparar lo del sitio en producción |
 | Logo definitivo | Diseño o marca | Nada crítico |
 
 ---
 
-## 6. Riesgos a vigilar
+## 10. Riesgos a vigilar
 
-- **Que el contenido se publique sin revisión.** El mayor riesgo del proyecto no es técnico. Un dato financiero viejo o una afirmación legal inexacta en un curso con la marca PymEdu puede llevar a un cliente a una mala decisión con su plata.
-- **Que el sitio se desactualice sin que nadie lo note.** Como publicar es manual, es fácil hacer push de un cambio y creer que ya está en línea. Se resuelve con el paso 10.
-- **Que el equipo evalúe algo distinto de lo que es.** El link muestra un reproductor de cursos, no la plataforma final. La guía lo aclara, pero vale repetirlo al compartirlo.
+- **Que el contenido se publique sin revisión.** Es el mayor riesgo del
+  proyecto y no es técnico. Un dato viejo o una afirmación legal inexacta, con
+  la marca PymEdu encima, puede llevar a un cliente a una mala decisión con su
+  plata.
+- **Que el sitio se desactualice sin que nadie lo note.** Publicar es manual:
+  es fácil hacer push y creer que ya está en línea.
+- **Que las auditorías terminen en el repositorio público.** Están en el
+  `.gitignore`, pero alguien podría forzarlas. La del sitio en producción
+  describe vulnerabilidades sin corregir.
+- **Que el equipo evalúe algo distinto de lo que es.** El link muestra un
+  reproductor de cursos, no la plataforma final.
