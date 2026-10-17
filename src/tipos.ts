@@ -170,6 +170,24 @@ export interface SimuladorCuota extends SimuladorBase {
   inicial: { monto: number; tasaAnual: number; meses: number }
 }
 
+export interface SimuladorPuntoEquilibrio extends SimuladorBase {
+  calculo: 'puntoEquilibrio'
+  etiquetas: { costosFijos: string; precio: string; costoVariable: string; unidad: string }
+  inicial: { costosFijos: number; precio: number; costoVariable: number }
+}
+
+export interface SimuladorFlujoProyectado extends SimuladorBase {
+  calculo: 'flujoProyectado'
+  etiquetas: { saldoInicial: string; ingresos: string; egresos: string; crecimiento: string }
+  inicial: { saldoInicial: number; ingresos: number; egresos: number; crecimiento: number }
+}
+
+export interface SimuladorInversion extends SimuladorBase {
+  calculo: 'inversion'
+  etiquetas: { inversion: string; flujoAnual: string; anios: string; tasa: string }
+  inicial: { inversion: number; flujoAnual: number; anios: number; tasa: number }
+}
+
 export type PantallaSimulador =
   | SimuladorInflacion
   | SimuladorRegla
@@ -180,6 +198,9 @@ export type PantallaSimulador =
   | SimuladorGastoAnual
   | SimuladorIva
   | SimuladorCuota
+  | SimuladorPuntoEquilibrio
+  | SimuladorFlujoProyectado
+  | SimuladorInversion
 
 /** El usuario aplica lo aprendido a su propio negocio. No se corrige. */
 export interface PantallaAplicar extends Base {

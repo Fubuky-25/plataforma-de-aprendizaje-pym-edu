@@ -76,6 +76,25 @@ textarea {
   }
 }
 
+/* Enlace para saltar los controles de la barra superior, que se repiten en
+   cada pantalla. Solo aparece al llegar con el teclado. */
+.saltar {
+  position: absolute;
+  left: -9999px;
+  z-index: 20;
+  padding: 0.7rem 1.2rem;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 700;
+  font-size: var(--t-chico);
+  border-radius: var(--radio-pildora);
+}
+
+.saltar:focus {
+  left: var(--e4);
+  top: var(--e4);
+}
+
 /* ---------- Iconos ---------- */
 
 .icono {

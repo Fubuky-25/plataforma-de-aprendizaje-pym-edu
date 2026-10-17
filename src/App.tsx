@@ -61,6 +61,9 @@ export default function App() {
           // a la lista correcta al salir.
           const destino = ubicarLeccion(id)
           if (destino) setNivelId(destino.nivel.id)
+          // Deja una entrada en el historial para que el botón "atrás" del
+          // navegador devuelva a esta lista en vez de salir del sitio.
+          history.pushState({ pymedu: 'leccion' }, '')
           setAbierta(id)
         }}
       />

@@ -395,8 +395,26 @@
     padding-right: var(--e4);
   }
 
+  /* Los puntos pasan a una fila propia sobre los botones, en vez de
+     desaparecer: en móvil son el único acceso rápido a una pantalla ya vista. */
+  .barra-inferior {
+    flex-wrap: wrap;
+    row-gap: var(--e2);
+  }
+
   .pasos {
-    display: none;
+    order: -1;
+    flex-basis: 100%;
+    gap: 0.35rem;
+  }
+
+  .paso {
+    width: 0.4rem;
+    height: 0.4rem;
+  }
+
+  .paso--actual {
+    width: 1.2rem;
   }
 
   .barra-inferior .boton {

@@ -12,15 +12,15 @@ Estado al 2026-10-16 y pasos para seguir avanzando.
 
 ## 1. En qué punto estamos
 
-Existe una **versión de prueba publicada** con los niveles 1 y 2 completos del programa de PymEdu, lista para que el equipo la revise y opine.
+Existe una **versión de prueba publicada** con los tres niveles del programa de PymEdu, lista para que el equipo la revise y opine. Falta solo la certificación final del material.
 
 Es un reproductor de lecciones interactivas, no la plataforma completa. PymEdu ya existe como ERP en pymedu.cl; este proyecto es su componente educativo. Se decidió que se integre **mediante un enlace desde el ERP** hacia este sitio, que sigue siendo una aplicación aparte; integrarlo dentro del ERP mismo queda como posibilidad futura.
 
 ### Lo que funciona
 
-- **Niveles 1 y 2 completos:** doce módulos, 109 pantallas, unas 2 horas y 40 minutos de contenido, con un selector para cambiar de nivel.
+- **Los tres niveles:** diecisiete módulos, 154 pantallas, unas 4 horas de contenido, con un selector para cambiar de nivel.
 - **Diez tipos de pantalla:** portada, lectura, tarjetas que se revelan, comparación, caso de negocio, emparejar, calculadora, aplícalo a tu negocio, evaluación y cierre.
-- **Nueve calculadoras:** inflación, regla 50/30/20, pago mínimo de tarjeta, meta de ahorro, carga financiera, días de caja, gasto anualizado, IVA del mes y cuota de crédito. Las fórmulas se revisaron a mano una por una.
+- **Doce calculadoras:** inflación, regla 50/30/20, pago mínimo de tarjeta, meta de ahorro, carga financiera, días de caja, gasto anualizado, IVA del mes, cuota de crédito, punto de equilibrio, flujo proyectado a seis meses y evaluación de inversión con VAN, TIR, Payback y ROI. Las fórmulas se revisaron a mano una por una.
 - **Lista de módulos** con el estado de cada uno y acceso directo al siguiente al terminar.
 - **Modo claro y oscuro** con el sistema visual de pymedu.cl: Manrope, Material Symbols y los mismos colores.
 - **Progreso guardado** en el navegador: al volver, cada módulo sigue donde quedó.
@@ -43,7 +43,18 @@ El 2026-09-28 se hizo una auditoría técnica del reproductor. Se corrigió lo q
 | El título de la pestaña nunca cambiaba (F5) | Ahora muestra el módulo abierto. |
 | Accesibilidad del foco y de las ayudas de campo (A3, A4, A6) | El foco va al título al cambiar de pantalla, los ítems bloqueados del índice explican por qué, y las ayudas de los campos quedaron asociadas a su casilla. |
 
-**Pendientes de esa auditoría:** F1 (el botón "atrás" del navegador sale de la aplicación), F3 (los puntos de navegación se ocultan en móvil) y S1 a S3, que son los que hay que resolver antes de cualquier integración real con el ERP.
+**Corregidos el 2026-10-16, al convertir el Nivel 3:**
+
+| Hallazgo | Qué se hizo |
+|---|---|
+| El botón "atrás" del navegador salía de la aplicación (F1) | Cada avance deja una entrada en el historial. Probado: desde la pantalla 3 el botón lleva a la 2, luego a la 1 y luego a la lista de módulos. |
+| Los puntos de navegación desaparecían en móvil (F3) | Ahora pasan a una fila propia sobre los botones, en tamaño reducido, en vez de ocultarse. |
+| Datos del negocio en el navegador sin forma de borrarlos (S1) | Hay un botón "Borrar mis datos de este dispositivo" al pie de la lista de módulos, con confirmación, junto a una explicación de qué se guarda. |
+| Sin política de seguridad de contenido (S2) | Se agregó por `<meta>`. Para no debilitarla con `unsafe-inline`, el script que fija el tema se movió a su propio archivo. |
+| Sin enlace para saltar al contenido (A5) | Agregado: aparece al navegar con teclado. |
+| `npm audit` sin ejecutar (S4) | Ejecutado: cero vulnerabilidades. Las dependencias de producción siguen siendo solo `react` y `react-dom`. |
+
+**Pendientes de esa auditoría:** S3 (la dependencia de Google Fonts entrega la IP del visitante a Google) y la parte de S1 que corresponde al cifrado, que solo tiene sentido resolver si algún día se integra con cuentas reales.
 
 **Sobre el hallazgo S5:** los casos de negocio de todos los módulos son ficticios, inventados para el curso. No se basan en personas reales.
 
@@ -164,9 +175,11 @@ La pregunta más importante de esta ronda es la 9 de la guía: **¿se lo mostrar
 
 ### Segunda etapa
 
-9. **Nivel 3.** Seis módulos: contabilidad básica, flujo proyectado y punto de equilibrio, VAN y TIR, créditos y leasing, inversión inicial y retorno, y una certificación final de 15 preguntas. Hay dos cosas nuevas:
-   - **Calculadoras:** punto de equilibrio, flujo de caja proyectado, y VAN y TIR. Se agregan igual que las nueve existentes.
-   - **La certificación final** es un formato distinto de los quiz actuales: 15 preguntas de varios módulos con un diploma al final. Hay que decidir si se implementa y qué significa "aprobar".
+9. **La certificación final (módulo 3.6).** Es lo único que falta del material. Son 15 preguntas de todo el nivel avanzado con un diploma al terminar, y es un formato distinto de los quiz actuales. Antes de construirla hay que decidir con el equipo:
+   - Qué significa aprobar y qué pasa si no se aprueba.
+   - Si se puede reintentar, cuántas veces y si las preguntas cambian.
+   - Qué se entrega: un diploma descargable, un correo, algo visible en el ERP.
+   - Si el resultado tiene que quedar registrado en alguna parte, lo que obligaría a tener cuentas.
 10. **Publicación automática.** Correr `gh auth refresh -s workflow` para dar el permiso que falta y agregar un workflow de GitHub Actions que publique en cada push a `main`. Elimina el paso manual y el riesgo de olvidarlo.
 11. **Medición básica.** Saber en qué pantalla abandona la gente y qué preguntas fallan más. Antes hay que decidir la herramienta y cómo se informa a los usuarios.
 

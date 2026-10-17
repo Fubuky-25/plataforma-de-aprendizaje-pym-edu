@@ -1,9 +1,10 @@
 import type { Leccion, Nivel } from '../tipos'
 import { nivel1 } from './nivel1'
 import { nivel2 } from './nivel2'
+import { nivel3 } from './nivel3'
 
 /** El programa completo, en orden. Agregar un nivel es sumarlo a esta lista. */
-export const niveles: Nivel[] = [nivel1, nivel2]
+export const niveles: Nivel[] = [nivel1, nivel2, nivel3]
 
 /** Duración declarada en la portada de cada lección. */
 export function duracionDe(leccion: Leccion): number {

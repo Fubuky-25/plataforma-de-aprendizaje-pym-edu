@@ -13,6 +13,11 @@ import {
   CalcGastoAnual,
   CalcIva,
 } from './simuladores/CalculadorasNegocio'
+import {
+  CalcFlujoProyectado,
+  CalcInversion,
+  CalcPuntoEquilibrio,
+} from './simuladores/CalculadorasInversion'
 
 /** Elige la calculadora según el cálculo que declare el contenido. */
 function Calculadora({ pantalla }: { pantalla: PantallaSimulador }) {
@@ -35,6 +40,12 @@ function Calculadora({ pantalla }: { pantalla: PantallaSimulador }) {
       return <CalcIva pantalla={pantalla} />
     case 'cuotaCredito':
       return <CalcCuota pantalla={pantalla} />
+    case 'puntoEquilibrio':
+      return <CalcPuntoEquilibrio pantalla={pantalla} />
+    case 'flujoProyectado':
+      return <CalcFlujoProyectado pantalla={pantalla} />
+    case 'inversion':
+      return <CalcInversion pantalla={pantalla} />
   }
 }
 

@@ -51,9 +51,22 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
     [guardarRespuesta, pantalla.id],
   )
 
+  /**
+   * Cada avance deja una entrada en el historial del navegador, para que el
+   * botón "atrás" retroceda una pantalla en vez de sacar al usuario de la
+   * aplicación entera.
+   */
+  const irAdelante = useCallback(
+    (destino: number) => {
+      history.pushState({ pymedu: 'pantalla' }, '')
+      irA(destino)
+    },
+    [irA],
+  )
+
   const avanzar = useCallback(() => {
-    if (puedeAvanzar) irA(indice + 1)
-  }, [puedeAvanzar, irA, indice])
+    if (puedeAvanzar) irAdelante(indice + 1)
+  }, [puedeAvanzar, irAdelante, indice])
 
   const retroceder = useCallback(() => {
     if (puedeRetroceder) irA(indice - 1)
@@ -75,6 +88,16 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
   }, [leccion.modulo, leccion.titulo])
 
   useEffect(() => {
+    function alVolverAtras() {
+      // El navegador ya consumió una entrada: aquí solo decidimos a dónde ir.
+      if (indice > 0) irA(indice - 1)
+      else alSalir()
+    }
+    window.addEventListener('popstate', alVolverAtras)
+    return () => window.removeEventListener('popstate', alVolverAtras)
+  }, [indice, irA, alSalir])
+
+  useEffect(() => {
     function alTeclado(e: KeyboardEvent) {
       // Las flechas solo navegan cuando no hay nada enfocado. Si el foco está en
       // una opción o una ficha, la flecha es parte de la actividad y saltar de
@@ -90,6 +113,9 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
 
   return (
     <div className="app">
+      <a className="saltar" href="#contenido-principal">
+        Saltar al contenido
+      </a>
       <header className="barra-superior">
         {/* Placeholder del logo hasta tener el archivo de PymEdu. */}
         <button type="button" className="marca marca--boton" onClick={alSalir}>
@@ -160,7 +186,7 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
                     ? `${p.titulo}. Bloqueada: resuelve antes la actividad pendiente.`
                     : undefined
                 }
-                onClick={() => irA(i)}
+                onClick={() => (i > indice ? irAdelante(i) : irA(i))}
               >
                 <span className="indice__numero">{i + 1}</span>
                 <span>{p.titulo}</span>
@@ -175,7 +201,7 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
         </nav>
       )}
 
-      <main className="lienzo">
+      <main className="lienzo" id="contenido-principal">
         <article className="pagina" key={pantalla.id}>
           <VistaPantalla
             pantalla={pantalla}
@@ -254,7 +280,7 @@ export function Reproductor({ leccion, alSalir, siguiente }: Props) {
               disabled={i > limite}
               aria-label={`Ir a la pantalla ${i + 1}: ${p.titulo}`}
               aria-current={i === indice}
-              onClick={() => irA(i)}
+              onClick={() => (i > indice ? irAdelante(i) : irA(i))}
             />
           ))}
         </div>

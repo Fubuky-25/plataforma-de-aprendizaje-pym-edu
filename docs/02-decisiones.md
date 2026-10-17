@@ -106,20 +106,20 @@ Decidido el 2026-10-16. La plataforma educativa se integra al ERP **mediante un 
 
 ### 10. Niveles del programa: se convierten en orden
 
-Decidido el 2026-10-16: están convertidos los niveles 1 y 2, doce módulos. El Nivel 3 queda pendiente.
+Decidido el 2026-10-16: están convertidos los tres niveles, diecisiete módulos. Falta solo la certificación final del material (módulo 3.6), que quedó para definirla con el equipo.
 
-Con dos niveles apareció la necesidad de elegir entre ellos. Se resolvió con un selector de pestañas sobre la misma lista de módulos, no con una pantalla nueva: sigue sin haber catálogo, búsqueda ni categorías.
+Con varios niveles apareció la necesidad de elegir entre ellos. Se resolvió con un selector de pestañas sobre la misma lista de módulos, no con una pantalla nueva: sigue sin haber catálogo, búsqueda ni categorías.
 
 ---
 
 ## Decisiones pendientes
 
 1. **Actualizar las cifras.** El material trae datos de 2024 y 2025 y estamos en octubre de 2026: IPC, tasas, indicadores de deuda, plazos de pago a pymes y condiciones de programas estatales. Cada cifra se muestra con su fecha explícita, pero hay que reemplazarlas. Es trabajo de contenido, no de código.
-2. **Revisión tributaria y legal, ahora urgente.** Con el Nivel 2 convertido, la plataforma contiene módulos sobre IVA y Formulario 29, formalización y tipos de sociedad. El módulo 2.5 es el de mayor riesgo: cita plazos y porcentajes de multa de 2025. Falta definir quién revisa antes de que lo vea un usuario real.
-3. **Revisión del contenido de los niveles 1 y 2.** Las alternativas correctas de las evaluaciones se dedujeron en los doce módulos y los casos de negocio son texto nuevo. Detalle en la sección 2 del documento de programa.
+2. **Revisión tributaria y legal, ahora urgente.** La plataforma contiene módulos sobre IVA y Formulario 29, formalización, tipos de sociedad y contabilidad. El módulo 2.5 es el de mayor riesgo: cita plazos y porcentajes de multa de 2025. Falta definir quién revisa antes de que lo vea un usuario real.
+3. **Revisión del contenido.** Las alternativas correctas de las evaluaciones se dedujeron en los diecisiete módulos y los casos de negocio son texto nuevo. Detalle en la sección 2 del documento de programa.
 4. **Logo real.** El mosaico con ícono de maletín es un marcador de posición que imita al del sitio. Falta el archivo del logo.
-5. **Fórmulas del simulador.** Existen nueve, las de los niveles 1 y 2. El Nivel 3 va a pedir punto de equilibrio, flujo de caja proyectado y VAN o TIR.
-6. **Nivel 3.** Seis módulos pendientes de convertir, incluida la certificación final de 15 preguntas que propone el material.
+5. **Certificación final (módulo 3.6).** Quince preguntas de todo el nivel avanzado, con diploma. Falta definir qué significa aprobar, si se puede reintentar y qué se entrega.
+6. **Revisión del contenido del Nivel 3.** Incluye una corrección al material en el módulo 3.5: el ejemplo original confundía ventas con utilidad. Conviene que alguien del equipo valide esa corrección.
 7. **Auditorías de seguridad.** Existen dos documentos de auditoría que quedaron deliberadamente fuera del repositorio, uno de ellos sobre el sitio en producción. Hay que decidir quién los recibe y por qué canal privado.
 8. **Herramientas por nombre.** El material del Nivel 2 recomendaba productos comerciales concretos. Aquí se enseñan categorías y criterios. Si PymEdu quiere nombrar herramientas, incluida la propia, es una decisión comercial del equipo.
 

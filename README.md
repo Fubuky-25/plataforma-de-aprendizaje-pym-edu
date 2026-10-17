@@ -14,9 +14,9 @@ El estado del proyecto y los pasos siguientes están en el
 
 Es una versión de prueba para revisión interna.
 
-- Están los **niveles 1 y 2 completos**: doce módulos, 109 pantallas y nueve
-  calculadoras. Se entra por la lista de módulos, con un selector de nivel. El
-  Nivel 3 está pendiente.
+- Están los **tres niveles**: diecisiete módulos, 154 pantallas y doce
+  calculadoras. Se entra por la lista de módulos, con un selector de nivel.
+  Falta la certificación final del material (módulo 3.6).
 - **Las cifras son de 2024 y 2025.** Se muestran siempre con su fecha, pero hay
   que actualizarlas antes de mostrarlo a clientes.
 - **Los módulos de IVA, formalización y financiamiento no tienen revisión

@@ -97,6 +97,24 @@ Los tres casos de negocio del nivel son texto nuevo: Hugo y su imprenta con fact
 
 **Riesgo específico de este nivel:** los módulos 2.4 y 2.5 tocan materia legal y tributaria. El 2.5 cita plazos de declaración, porcentajes de multa e intereses que el material fecha en 2025 y que no se pudieron verificar. Están presentados como lo que decía el material, con la indicación explícita de confirmar en sii.cl, pero **ninguno de los dos módulos debería mostrarse a un usuario real sin revisión profesional**.
 
+### Nivel 3 — Decisiones avanzadas
+
+Convertido el 2026-10-16. Cinco módulos, 45 pantallas, unos 77 minutos.
+
+| Módulo | Pantallas | Actividades | Calculadora |
+|---|---|---|---|
+| 3.1 Contabilidad para decidir, no para cumplir | 9 | Tarjetas ×2, emparejar, caso, quiz | — |
+| 3.2 Flujo proyectado y punto de equilibrio | 9 | Caso, aplícalo, quiz | Flujo proyectado a 6 meses y punto de equilibrio |
+| 3.3 VAN, TIR, Payback y ROI sin miedo | 9 | Tarjetas, emparejar, comparación, caso, quiz | Evaluación de inversión (los cuatro indicadores) |
+| 3.4 Con qué plata financiar el crecimiento | 9 | Tarjetas, comparación, emparejar, caso, quiz | — |
+| 3.5 Inversión inicial y retorno esperado | 9 | Tarjetas, caso, aplícalo, quiz | Evaluación de inversión |
+
+**Falta el módulo 3.6, la certificación final.** Son 15 preguntas que abarcan todo el nivel, con un diploma al terminar. Quedó pendiente a propósito: es un formato distinto de los quiz actuales y hay que definir con el equipo qué significa aprobar, si se puede reintentar y qué se entrega. Ver la sección 5.
+
+Las evaluaciones del Nivel 3 también venían como preguntas abiertas y se convirtieron a selección múltiple, igual que en el Nivel 2.
+
+Los números de los ejemplos y de los casos se calcularon con las mismas fórmulas del simulador: si un usuario mete las cifras del texto, obtiene exactamente el resultado que el texto describe. Se verificó en pantalla para el punto de equilibrio, el flujo proyectado y la evaluación de inversión.
+
 ### Correcciones y omisiones respecto del material
 
 Cambios deliberados que conviene que el equipo conozca:
@@ -112,6 +130,9 @@ Cambios deliberados que conviene que el equipo conozca:
 | 2.3 | Siete productos comerciales recomendados por nombre | Se reemplazaron por categorías de herramienta y criterios para elegir. PymEdu es un ERP: recomendar competidores en su propio curso es una decisión comercial del equipo, no del contenido. Además, una lista de productos envejece mal. |
 | 2.4 | "Los socios no comprometen su patrimonio personal" | Se matizó: la responsabilidad limitada existe pero tiene excepciones, y se cae si el dueño firma personalmente como aval, que es lo que suelen pedir los bancos. |
 | 2.5 | Plazos del F29 y multas, "actualizado a 2025" | Se mantienen como dato del material con su fecha, nunca como vigentes, y cada pantalla remite a sii.cl. La tasa de IVA quedó como campo editable del simulador en vez de fija en el código. |
+| 3.1 y 3.2 | Los ejemplos de la panadería y de la cafetería venían con las tablas de cifras vacías en el PDF | Se reconstruyeron con números propios y consistentes. En la cafetería se usaron los valores que hacen cuadrar el resultado que sí traía el texto (500 tazas). |
+| 3.4 | Repetía los cuatro instrumentos ya explicados en el módulo 2.6 | No se repiten. El módulo se reorientó a lo que el 2.6 no cubría: deuda contra capital, y las fuentes que no son un crédito bancario. |
+| **3.5** | **El ejemplo del congelador trataba el aumento de ventas como si fuera aumento de utilidad**, y le daba un payback de 0,4 años | **Corregido.** Se usa margen de contribución, con lo que el payback honesto queda en unos 9 meses. El error no se escondió: es el contenido central de una pantalla, porque es el más caro al evaluar una inversión. |
 
 ---
 
