@@ -52,6 +52,9 @@ export function ListaModulos({ niveles, nivelActivo, alCambiarNivel, alAbrir }: 
 
   return (
     <div className="app">
+      <a className="saltar" href="#contenido-principal">
+        Saltar al contenido
+      </a>
       <header className="barra-superior">
         <p className="marca">
           <span className="marca__tile" aria-hidden="true">
@@ -96,7 +99,7 @@ export function ListaModulos({ niveles, nivelActivo, alCambiarNivel, alAbrir }: 
         </div>
       </header>
 
-      <main className="lienzo">
+      <main className="lienzo" id="contenido-principal">
         <div className="pagina">
           {niveles.length > 1 && (
             <nav className="selector-nivel" aria-label="Niveles del programa">
