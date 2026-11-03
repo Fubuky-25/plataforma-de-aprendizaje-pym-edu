@@ -49,7 +49,7 @@ export const leccion: Leccion = {
         'El indicador que se usa en Chile es la carga financiera: qué porcentaje de tu ingreso mensual se va en pagar cuotas. Es un número simple de calcular y dice bastante más que el monto total de la deuda.',
         'A junio de 2024, el 16,5 % de los deudores en Chile presentaba carga financiera alta, y la mediana de la deuda de las personas era de $1,9 millones.',
       ],
-      nota: 'Deber plata no es el problema. Un crédito hipotecario de veinte años puede ser una buena decisión y una deuda de consumo de seis meses puede ser una mala. Lo que define es si puedes pagarla sin dejar de vivir.',
+      nota: 'Deber dinero no es el problema. Un crédito hipotecario de veinte años puede ser una buena decisión y una deuda de consumo de seis meses puede ser una mala. Lo que define es si puedes pagarla sin dejar de vivir.',
       fuente:
         'Informe de endeudamiento de la CMF con datos a junio de 2024. Revisa el informe vigente en cmfchile.cl.',
     },
@@ -199,7 +199,7 @@ export const leccion: Leccion = {
         },
       ],
       explicacion:
-        'Patricia ya paga $360.000 de $900.000: un 40 % de carga financiera, bastante por encima de lo recomendable. Sumar una cuota más sin mirar ese número es lo que convierte un problema puntual en uno permanente. Y la tarjeta en la que abona el mínimo es justamente la deuda más cara que tiene: renegociarla libera más espacio que cualquier crédito nuevo. El avance en efectivo es la opción más cara de todas. Y dejar de pagar sin avisar no aplaza el problema: agrega mora, intereses y cobranza. Ojo con el matiz: la urgencia de Patricia es real y el refrigerador probablemente hay que arreglarlo. Lo que está en discusión no es si repararlo, sino con qué plata.',
+        'Patricia ya paga $360.000 de $900.000: un 40 % de carga financiera, bastante por encima de lo recomendable. Sumar una cuota más sin mirar ese número es lo que convierte un problema puntual en uno permanente. Y la tarjeta en la que abona el mínimo es justamente la deuda más cara que tiene: renegociarla libera más espacio que cualquier crédito nuevo. El avance en efectivo es la opción más cara de todas. Y dejar de pagar sin avisar no aplaza el problema: agrega mora, intereses y cobranza. Fíjate en el matiz: la urgencia de Patricia es real y el refrigerador probablemente hay que arreglarlo. Lo que está en discusión no es si repararlo, sino con qué dinero.',
       bloquea: true,
     },
 

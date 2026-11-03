@@ -43,7 +43,7 @@ export const leccion: Leccion = {
       etiqueta: 'Lo esencial',
       titulo: 'Para qué sirve endeudarse',
       parrafos: [
-        'Hay una sola pregunta que separa la deuda buena de la mala, y no tiene que ver con la tasa: ¿esta plata va a generar más de lo que cuesta?',
+        'Hay una sola pregunta que separa la deuda buena de la mala, y no tiene que ver con la tasa: ¿este dinero va a generar más de lo que cuesta?',
         'Un crédito para comprar una máquina que aumenta la producción se paga con lo que produce. Un crédito para cubrir el sueldo de este mes no genera nada: solo traslada el problema al mes siguiente, con intereses encima.',
         'Esto no significa que endeudarse para capital de trabajo esté mal. Significa que si el negocio necesita deuda todos los meses para operar, el problema no se arregla con más deuda: hay algo en los márgenes o en los plazos de cobro que hay que resolver antes.',
       ],
@@ -85,7 +85,7 @@ export const leccion: Leccion = {
           id: 't4',
           titulo: 'Factoring',
           definicion:
-            'Vendes una factura por cobrar y recibes la plata ahora, menos una comisión. No es deuda nueva: estás adelantando algo que ya te deben. Es la herramienta para problemas de plazo, no de rentabilidad.',
+            'Vendes una factura por cobrar y recibes el dinero ahora, menos una comisión. No es deuda nueva: estás adelantando algo que ya te deben. Es la herramienta para problemas de plazo, no de rentabilidad.',
         },
       ],
       nota: 'Existen además programas con garantía estatal, como FOGAPE, que permiten acceder a condiciones mejores porque el Estado cubre parte del riesgo del banco. Sus tasas, plazos y requisitos cambian cada año.',
@@ -159,7 +159,7 @@ export const leccion: Leccion = {
         'La decisión de endeudarse se toma antes de entrar al banco, no en el mesón. Estas son las que importan.',
       ],
       puntos: [
-        'Define el propósito y escríbelo. Si no puedes explicar en una frase qué va a producir esa plata, probablemente no es el momento.',
+        'Define el propósito y escríbelo. Si no puedes explicar en una frase qué va a producir ese dinero, probablemente no es el momento.',
         'Calcula tu carga financiera total con la cuota nueva incluida. La recomendación habitual es no pasar del 25 % de tus ingresos.',
         'Compara con el CAE, no con la tasa. Es el único número que incluye comisiones y seguros y permite comparar dos ofertas de verdad.',
         'Lee las condiciones: costo de prepago, seguros asociados, cláusulas que permiten exigir el total anticipadamente.',
@@ -211,7 +211,7 @@ export const leccion: Leccion = {
         },
       ],
       explicacion:
-        'Esta es deuda de la buena: el horno produce el contrato que la paga. Lo que falta es hacer los números antes de firmar. En $6.000.000 a tres años, la diferencia entre 18 % y una tasa con garantía estatal se cuenta en cientos de miles de pesos, así que vale la pena averiguarlo. Y la cuota hay que sumarla a lo que ya paga: si el contrato nuevo no la cubre con holgura, el crecimiento la deja peor. El factoring no sirve aquí, porque adelanta plata de facturas puntuales y el horno es una inversión que se usa años: resolvería un mes y dejaría el problema. Tomar el 18 % por apuro es pagar de más por no haber hecho dos llamadas. Y acortar a doce meses baja los intereses totales pero triplica la cuota: la trampa está en que podría ahogar justamente el flujo de caja que el contrato nuevo viene a mejorar.',
+        'Esta es deuda de la buena: el horno produce el contrato que la paga. Lo que falta es hacer los números antes de firmar. En $6.000.000 a tres años, la diferencia entre 18 % y una tasa con garantía estatal se cuenta en cientos de miles de pesos, así que vale la pena averiguarlo. Y la cuota hay que sumarla a lo que ya paga: si el contrato nuevo no la cubre con holgura, el crecimiento la deja peor. El factoring no sirve aquí, porque adelanta dinero de facturas puntuales y el horno es una inversión que se usa años: resolvería un mes y dejaría el problema. Tomar el 18 % por apuro es pagar de más por no haber hecho dos llamadas. Y acortar a doce meses baja los intereses totales pero triplica la cuota: la trampa está en que podría ahogar justamente el flujo de caja que el contrato nuevo viene a mejorar.',
       bloquea: true,
     },
 
@@ -237,7 +237,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'El crédito no cobra intereses si lo pagas antes', correcta: false },
           ],
           explicacion:
-            'En el factoring estás cobrando antes algo que ya es tuyo, a cambio de una comisión, y la operación se cierra cuando tu cliente paga. El crédito es plata nueva que entra a tu carga financiera y que vas a devolver en cuotas. Por eso resuelven problemas distintos: el factoring sirve para plazos de cobro y el crédito para inversión.',
+            'En el factoring estás cobrando antes algo que ya es tuyo, a cambio de una comisión, y la operación se cierra cuando tu cliente paga. El crédito es dinero nuevo que entra a tu carga financiera y que vas a devolver en cuotas. Por eso resuelven problemas distintos: el factoring sirve para plazos de cobro y el crédito para inversión.',
         },
         {
           id: 'q2',
@@ -249,7 +249,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'El 75 % de los ingresos', correcta: false },
           ],
           explicacion:
-            'La referencia habitual es no pasar del 25 %, el mismo criterio que viste en el Nivel 1 para las finanzas personales. Por encima de eso pierdes la capacidad de absorber un imprevisto sin endeudarte otra vez. Ojo con la tercera alternativa: que el negocio crezca no elimina el tope, porque el crecimiento casi nunca es tan parejo como las cuotas.',
+            'La referencia habitual es no pasar del 25 %, el mismo criterio que viste en el Nivel 1 para las finanzas personales. Por encima de eso pierdes la capacidad de absorber un imprevisto sin endeudarte otra vez. Fíjate en la tercera alternativa: que el negocio crezca no elimina el tope, porque el crecimiento casi nunca es tan parejo como las cuotas.',
         },
         {
           id: 'q3',
@@ -276,7 +276,7 @@ export const leccion: Leccion = {
       etiqueta: 'Cierre del nivel',
       titulo: 'Lo que te llevas',
       resumen: [
-        'La pregunta que define si una deuda sirve no es la tasa, es si esa plata va a generar más de lo que cuesta.',
+        'La pregunta que define si una deuda sirve no es la tasa, es si ese dinero va a generar más de lo que cuesta.',
         'Cada herramienta resuelve un problema distinto: el factoring es para plazos de cobro, el crédito para invertir, el leasing para equipos.',
         'Compara con el CAE, no con la tasa. Es el único número que incluye comisiones y seguros.',
         'Si el negocio necesita deuda todos los meses para operar, el problema está en los márgenes o en los plazos, y más deuda no lo arregla.',

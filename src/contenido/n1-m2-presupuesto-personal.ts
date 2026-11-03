@@ -26,7 +26,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 1 · Módulo 1.2',
       titulo: 'Presupuesto personal',
       bajada:
-        'Un presupuesto no es una lista de prohibiciones. Es saber a dónde se va tu plata antes de que se vaya.',
+        'Un presupuesto no es una lista de prohibiciones. Es saber a dónde se va tu dinero antes de que se vaya.',
       duracionMin: 12,
       objetivos: [
         'Entender qué es un presupuesto y para qué sirve de verdad',

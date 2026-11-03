@@ -212,7 +212,7 @@ export const leccion: Leccion = {
       etiqueta: 'Tu caso',
       titulo: '¿Dónde estás tú?',
       instruccion:
-        'Estas tres respuestas son las que un contador te va a pedir en la primera reunión. Tenerlas listas ahorra tiempo y plata.',
+        'Estas tres respuestas son las que un contador te va a pedir en la primera reunión. Tenerlas listas ahorra tiempo y dinero.',
       campos: [
         {
           id: 'c1',

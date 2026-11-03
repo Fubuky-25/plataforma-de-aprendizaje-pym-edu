@@ -29,7 +29,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 2 · Módulo 2.1',
       titulo: 'El flujo de caja de tu negocio',
       bajada:
-        'Un negocio rentable puede quebrar igual. No por vender poco, sino porque la plata entra después de que hay que pagarla.',
+        'Un negocio rentable puede quebrar igual. No por vender poco, sino porque el dinero entra después de que hay que pagarla.',
       duracionMin: 14,
       objetivos: [
         'Entender por qué utilidad y caja no son lo mismo',
@@ -46,7 +46,7 @@ export const leccion: Leccion = {
       titulo: 'Vendiste, pero todavía no te pagan',
       parrafos: [
         'Hay una frase que todo contador repite y que cuesta entender hasta que se vive: la utilidad es una opinión, la caja es un hecho. Puedes cerrar un mes excelente en el papel y no tener con qué pagar sueldos.',
-        'La razón es simple. Compras los insumos hoy y los pagas hoy. Produces y vendes. Y cobras treinta, sesenta o noventa días después. Entre esos dos momentos tienes que seguir pagando arriendo, sueldos y proveedores con plata que todavía no llega.',
+        'La razón es simple. Compras los insumos hoy y los pagas hoy. Produces y vendes. Y cobras treinta, sesenta o noventa días después. Entre esos dos momentos tienes que seguir pagando arriendo, sueldos y proveedores con dinero que todavía no llega.',
         'No es un problema de mala administración: es la estructura normal del negocio. Lo que distingue a quien sobrevive no es evitar el descalce, es saber cuánto dura y tener con qué cubrirlo.',
       ],
       puntos: [
@@ -54,7 +54,7 @@ export const leccion: Leccion = {
         'El 43,8 % de los emprendedores declaraba cubrir sus gastos con dificultad, y un 9,6 % estaba derechamente en crisis financiera.',
         'El 74 % nunca había recibido capacitación financiera.',
       ],
-      nota: 'Mientras más chico el negocio, más tarde le pagan y menos espalda tiene para aguantar. Es exactamente al revés de lo que convendría.',
+      nota: 'Mientras más chico el negocio, más tarde le pagan y menos margen tiene para resistir. Es exactamente al revés de lo que convendría.',
       fuente:
         'Cifras de estudios de prensa económica de 2025. Úsalas como orden de magnitud, no como el dato de hoy.',
     },
@@ -76,22 +76,22 @@ export const leccion: Leccion = {
           id: 't2',
           titulo: 'Flujo de caja',
           definicion:
-            'La plata que efectivamente entró y salió en un periodo. No pregunta si una venta está facturada: pregunta si el dinero llegó a la cuenta. Es lo que determina si puedes pagar los sueldos el día 30.',
+            'El dinero que efectivamente entró y salió en un periodo. No pregunta si una venta está facturada: pregunta si el dinero llegó a la cuenta. Es lo que determina si puedes pagar los sueldos el día 30.',
         },
         {
           id: 't3',
           titulo: 'Ciclo de caja',
           definicion:
-            'El tiempo entre que pagas los insumos y cobras la venta que hiciste con ellos. Si pagas al contado y cobras a 60 días, tu ciclo es de 60 días: ese es el periodo que tienes que financiar con plata propia.',
+            'El tiempo entre que pagas los insumos y cobras la venta que hiciste con ellos. Si pagas al contado y cobras a 60 días, tu ciclo es de 60 días: ese es el periodo que tienes que financiar con dinero propio.',
         },
         {
           id: 't4',
           titulo: 'Capital de trabajo',
           definicion:
-            'La plata que el negocio necesita tener disponible para funcionar mientras espera cobrar. No es ganancia ni ahorro: es el colchón que hace que el ciclo de caja no te detenga. Cuando falta, hay que pedirlo prestado.',
+            'El dinero que el negocio necesita tener disponible para funcionar mientras espera cobrar. No es ganancia ni ahorro: es el colchón que hace que el ciclo de caja no te detenga. Cuando falta, hay que pedirlo prestado.',
         },
       ],
-      nota: 'Si entiendes la diferencia entre las dos primeras, ya evitaste el error más caro de un negocio chico: celebrar un mes bueno y gastarse una plata que todavía no llega.',
+      nota: 'Si entiendes la diferencia entre las dos primeras, ya evitaste el error más caro de un negocio chico: celebrar un mes bueno y gastarse dinero que todavía no llega.',
     },
 
     {
@@ -103,7 +103,7 @@ export const leccion: Leccion = {
         'Pon lo que tienes disponible hoy y lo que gastas en un mes normal. Vas a ver cuánto te alcanza si dejaras de vender mañana.',
       calculo: 'diasDeCaja',
       etiquetas: {
-        saldo: '¿Cuánta plata tiene disponible el negocio hoy?',
+        saldo: '¿Cuánto dinero tiene disponible el negocio hoy?',
         gastoMensual: '¿Cuánto gasta el negocio en un mes normal?',
       },
       inicial: { saldo: 1200000, gastoMensual: 1800000 },
@@ -117,14 +117,14 @@ export const leccion: Leccion = {
       etiqueta: 'Qué hacer',
       titulo: 'Cómo ganar días de caja',
       parrafos: [
-        'Hay dos maneras de mejorar la caja: que la plata entre antes o que salga después. Casi todas las herramientas son una u otra.',
+        'Hay dos maneras de mejorar la caja: que el dinero entre antes o que salga después. Casi todas las herramientas son una u otra.',
       ],
       puntos: [
         'Registra todos los días. No a fin de mes: todos los días. Un flujo de caja que se arma de memoria llega tarde para servir de algo.',
         'Pronostica con lo que ya sabes. Tus ventas de los últimos meses y las fechas de vencimiento de tus facturas te dicen bastante sobre las próximas semanas. Ajusta por temporada: enero no se parece a diciembre.',
         'Negocia los dos lados. Pide a tus clientes plazos más cortos o un anticipo, y a tus proveedores plazos más largos. Cada día que ganas en cualquiera de los dos extremos es un día menos que financiar.',
         'Ten un fondo de al menos un mes de gastos. Es lo que convierte un atraso de un cliente en una molestia y no en una emergencia.',
-        'Considera el factoring antes que un crédito. Vender una factura por cobrar adelanta plata que ya es tuya, a cambio de una comisión. No es deuda nueva.',
+        'Considera el factoring antes que un crédito. Vender una factura por cobrar adelanta dinero que ya es tuyo, a cambio de una comisión. No es deuda nueva.',
         'Revisa los programas públicos vigentes. Existen líneas con garantía estatal y apoyos a la digitalización, pero sus montos y condiciones cambian cada año: confirma lo que está abierto hoy antes de contar con ello.',
       ],
       nota: 'El orden importa. Primero cobrar mejor, después estirar pagos, después adelantar facturas, y solo al final endeudarse. Cada escalón cuesta más que el anterior.',
@@ -146,7 +146,7 @@ export const leccion: Leccion = {
         {
           id: 'o1',
           texto:
-            'Vender al factoring una factura, porque adelanta plata que ya es suya y resuelve el mes sin tomar deuda nueva',
+            'Vender al factoring una factura, porque adelanta dinero que ya es suyo y resuelve el mes sin tomar deuda nueva',
           correcta: true,
         },
         {
@@ -187,7 +187,7 @@ export const leccion: Leccion = {
       pares: [
         {
           id: 'e1',
-          izquierda: 'Tienes facturas emitidas y necesitas la plata ahora',
+          izquierda: 'Tienes facturas emitidas y necesitas el dinero ahora',
           derecha: 'Factoring',
         },
         {
@@ -262,7 +262,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Porque la inflación reduce el valor de las ventas', correcta: false },
           ],
           explicacion:
-            'El ciclo de caja es el tiempo entre pagar los insumos y cobrar la venta. Si pagas al contado y cobras a 60 días, tienes que financiar dos meses de operación con plata propia. Nada de esto tiene que ver con vender a pérdida: un negocio perfectamente rentable puede quedarse sin caja por esta razón, y es la causa más común de que un negocio chico que vende bien igual se ahogue.',
+            'El ciclo de caja es el tiempo entre pagar los insumos y cobrar la venta. Si pagas al contado y cobras a 60 días, tienes que financiar dos meses de operación con dinero propio. Nada de esto tiene que ver con vender a pérdida: un negocio perfectamente rentable puede quedarse sin caja por esta razón, y es la causa más común de que un negocio chico que vende bien igual se ahogue.',
         },
         {
           id: 'q2',
@@ -278,7 +278,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Sacar un avance en efectivo de la tarjeta', correcta: false },
           ],
           explicacion:
-            'El factoring adelanta el cobro de una factura que ya emitiste: estás cobrando antes algo que ya te deben, a cambio de una comisión. Las otras tres son deuda: plata que no es tuya y que vas a devolver con intereses. Acortar plazos de cobro y negociar plazos de pago con proveedores también mejoran la caja sin endeudarte.',
+            'El factoring adelanta el cobro de una factura que ya emitiste: estás cobrando antes algo que ya te deben, a cambio de una comisión. Las otras tres son deuda: dinero que no es tuyo y que vas a devolver con intereses. Acortar plazos de cobro y negociar plazos de pago con proveedores también mejoran la caja sin endeudarte.',
         },
         {
           id: 'q3',
@@ -287,14 +287,14 @@ export const leccion: Leccion = {
             { id: 'a', texto: 'Cuántos días demora en cobrar sus facturas', correcta: false },
             {
               id: 'b',
-              texto: 'Cuánto tiempo puede seguir operando con la plata que tiene disponible',
+              texto: 'Cuánto tiempo puede seguir operando con el dinero que tiene disponible',
               correcta: true,
             },
             { id: 'c', texto: 'Cuántos días al mes el negocio es rentable', correcta: false },
             { id: 'd', texto: 'El plazo que da el SII para declarar impuestos', correcta: false },
           ],
           explicacion:
-            'Se calcula dividiendo la plata disponible por el gasto de cada día. Responde a una pregunta muy concreta: si mañana dejara de entrar un peso, ¿cuánto aguanto? Por debajo de treinta días, cualquier cliente que se atrase se convierte en una emergencia; sobre sesenta hay margen para negociar en vez de aceptar lo primero que aparezca.',
+            'Se calcula dividiendo el dinero disponible por el gasto de cada día. Responde a una pregunta muy concreta: si mañana dejara de entrar un peso, ¿cuánto aguanto? Por debajo de treinta días, cualquier cliente que se atrase se convierte en una emergencia; sobre sesenta hay margen para negociar en vez de aceptar lo primero que aparezca.',
         },
       ],
     },
@@ -308,7 +308,7 @@ export const leccion: Leccion = {
         'La utilidad dice si el negocio sirve; la caja dice si sobrevive este mes. Son dos preguntas distintas y hay que mirar las dos.',
         'El descalce entre pagar y cobrar es normal. Lo peligroso no es tenerlo, es no saber cuántos días dura.',
         'Primero cobrar antes, después pagar más tarde, después adelantar facturas. Endeudarse va al final, no al principio.',
-        'Un negocio que vende bien y no tiene plata tiene un problema de plazos, no de ventas. Bajar precios lo empeora.',
+        'Un negocio que vende bien y no tiene dinero tiene un problema de plazos, no de ventas. Bajar precios lo empeora.',
       ],
       pasoSemana:
         'Anota todo lo que tienes por cobrar con su fecha de pago, y al lado todo lo que tienes que pagar en las próximas cuatro semanas con su fecha. Ponlos en una sola línea de tiempo. El día donde los pagos superan a los cobros es tu problema, y ahora lo ves con semanas de anticipación en vez de el día que llega.',

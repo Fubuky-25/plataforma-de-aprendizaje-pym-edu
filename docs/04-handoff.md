@@ -242,9 +242,10 @@ Para no volver a discutirlas. El detalle y los motivos están en
 | Integración con el ERP | Enlace desde pymedu.cl a este sitio aparte |
 | Niveles | Los tres convertidos. La certificación final queda para definir con el equipo |
 
-Dos diferencias deliberadas con pymedu.cl, por accesibilidad: el texto del
-botón principal en modo oscuro va oscuro y no blanco, y el error en las
-respuestas se marca en dorado y no en rojo.
+Una diferencia deliberada con pymedu.cl, por accesibilidad: el texto del botón
+principal en modo oscuro va oscuro y no blanco. Las respuestas se marcan en
+verde ("Correcta") y rojo ("Incorrecta"), siempre con la palabra además del
+color.
 
 ---
 

@@ -54,7 +54,7 @@ Todos los colores están en `src/estilos/variables.css`. Es el único archivo qu
 **Dos diferencias deliberadas con el sitio:**
 
 1. **Texto oscuro sobre el botón principal en modo oscuro.** El sitio usa texto blanco sobre el azul `#5a9ab5`, lo que da un contraste cercano a 3:1 e incumple el mínimo para texto normal. En una página de marketing se nota poco; en un curso que se lee entero, sí. El botón mantiene el mismo azul, con texto oscuro.
-2. **El dorado de marca reemplaza al rojo para señalar errores.** Una respuesta incorrecta se marca en dorado, no en rojo. El usuario es un adulto aprendiendo por decisión propia; el rojo de error se reserva para fallos reales del sistema.
+2. **Correcto en verde, incorrecto en rojo (cambio del 2026-11-02).** Antes el error se marcaba en dorado para no castigar al usuario. Se revirtió por pedido del dueño del proyecto: verde y rojo son lo que cualquiera lee de inmediato. Cada marca lleva además la palabra "Correcta" o "Incorrecta", para que el color no sea la única señal.
 
 **Decisiones de diseño que se apartan de la referencia corporativa, a propósito:**
 

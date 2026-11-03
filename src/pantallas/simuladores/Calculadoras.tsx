@@ -254,7 +254,7 @@ export function CalcMeta({ pantalla }: { pantalla: SimuladorMeta }) {
       <Resultado rotulo={pantalla.lectura} cifra={`$${pesos.format(cuotaConRendimiento)}`}>
         <div className="resultado__detalle">
           <Linea valor={`$${pesos.format(cuotaSinRendimiento)}`}>
-            Cuota si guardas la plata sin que rinda
+            Cuota si guardas el dinero sin que rinda
           </Linea>
           <Linea valor={`$${pesos.format(cuotaConRendimiento)}`}>
             Cuota si la dejas rindiendo al {porcentaje(soloDecimal(tasa), 2)} % mensual

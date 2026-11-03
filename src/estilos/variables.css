@@ -37,6 +37,7 @@
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #410002;
+  --color-error-outline: #e8a09a;
 
   --color-surface: #f8f9fa;
   --color-surface-container-lowest: #ffffff;
@@ -54,11 +55,11 @@
   --color-inverse-on-surface: #eff0f7;
 
   /* Respuesta correcta. Toma la familia verde del tema claro. */
-  --color-exito: #2a4a33;
+  --color-exito: #1e7a3c;
   --color-on-exito: #ffffff;
-  --color-exito-container: #dbe9df;
-  --color-on-exito-container: #16301f;
-  --color-exito-outline: #8fb69d;
+  --color-exito-container: #dcf2e3;
+  --color-on-exito-container: #0f3d1f;
+  --color-exito-outline: #7cc494;
 
   /* Respuesta incorrecta y avisos. Usa el dorado de la marca, no rojo. */
   --color-atencion: #6b5522;
@@ -91,8 +92,9 @@
 
   --color-error: #ffb4ab;
   --color-on-error: #690005;
-  --color-error-container: #93000a;
+  --color-error-container: #4a1b18;
   --color-on-error-container: #ffdad6;
+  --color-error-outline: #b3544c;
 
   --color-surface: #0a0c10;
   --color-surface-container-lowest: #0e1015;
@@ -109,11 +111,11 @@
   --color-inverse-surface: #e8eaf0;
   --color-inverse-on-surface: #0a0c10;
 
-  --color-exito: #7fc49a;
+  --color-exito: #5fd38a;
   --color-on-exito: #06301a;
-  --color-exito-container: #1b3d2a;
-  --color-on-exito-container: #a8dcbd;
-  --color-exito-outline: #3f6b52;
+  --color-exito-container: #173d27;
+  --color-on-exito-container: #b4efc9;
+  --color-exito-outline: #2f7a4c;
 
   --color-atencion: #e8d4a0;
   --color-atencion-container: #453612;

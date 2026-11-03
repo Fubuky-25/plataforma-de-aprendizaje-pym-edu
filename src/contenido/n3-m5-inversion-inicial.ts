@@ -31,7 +31,7 @@ export const leccion: Leccion = {
       objetivos: [
         'Estimar el costo real de una inversión, no solo el precio del equipo',
         'Calcular el retorno sin el error que lo infla',
-        'Identificar los riesgos antes de comprometer la plata',
+        'Identificar los riesgos antes de comprometer el dinero',
         'Decidir con los cuatro indicadores del módulo anterior',
       ],
     },
@@ -117,7 +117,7 @@ export const leccion: Leccion = {
           id: 't3',
           titulo: 'Aparecen costos que no se contaron',
           definicion:
-            'Instalación, permisos, capacitación, repuestos, el seguro. Se reduce pidiendo la cotización completa por escrito e incluyendo un margen de imprevistos en el costo inicial, en vez de agregarlos después con plata que ya no hay.',
+            'Instalación, permisos, capacitación, repuestos, el seguro. Se reduce pidiendo la cotización completa por escrito e incluyendo un margen de imprevistos en el costo inicial, en vez de agregarlos después con dinero que ya no hay.',
         },
         {
           id: 't4',
@@ -283,7 +283,7 @@ export const leccion: Leccion = {
         'Un proyecto rentable puede igual comprometer la caja. Por eso el flujo proyectado se mira junto con los indicadores.',
       ],
       pasoSemana:
-        'Toma la inversión que tengas pendiente y haz las dos correcciones de este módulo: suma todos los costos que faltan en la cotización y cambia ventas por margen. Vuelve a calcular el payback. Si el proyecto sigue en pie después de eso, ya puedes tomar la decisión con tranquilidad. Con esto cierras el Nivel 3: pasaste de ordenar tu plata personal a evaluar inversiones de tu negocio con los mismos criterios que usa un banco.',
+        'Toma la inversión que tengas pendiente y haz las dos correcciones de este módulo: suma todos los costos que faltan en la cotización y cambia ventas por margen. Vuelve a calcular el payback. Si el proyecto sigue en pie después de eso, ya puedes tomar la decisión con tranquilidad. Con esto cierras el Nivel 3: pasaste de ordenar tu dinero personal a evaluar inversiones de tu negocio con los mismos criterios que usa un banco.',
     },
   ],
 }

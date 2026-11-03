@@ -282,7 +282,7 @@ export function CalcInversion({ pantalla }: { pantalla: SimuladorInversion }) {
           <p className="resultado__lectura">
             {valorActual > 0
               ? `El VAN es positivo: el proyecto rinde más que el ${porcentaje(tasaN)} % que le exiges. Compara la TIR con esa tasa: mientras más alta, más margen tienes si algo sale peor de lo esperado.`
-              : `El VAN es negativo: a esta tasa, el proyecto no alcanza a cubrir lo que le exiges. No significa que pierdas plata, significa que te conviene más usarla en otra cosa que rinda ${porcentaje(tasaN)} %.`}
+              : `El VAN es negativo: a esta tasa, el proyecto no alcanza a cubrir lo que le exiges. No significa que pierdas dinero, significa que te conviene más usarlo en otra cosa que rinda ${porcentaje(tasaN)} %.`}
           </p>
         </Resultado>
       )}

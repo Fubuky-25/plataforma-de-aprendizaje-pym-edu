@@ -160,7 +160,7 @@ export const leccion: Leccion = {
       etiqueta: 'Caso',
       titulo: 'Camila se arrepintió',
       escenario: [
-        'Camila firmó el martes un crédito de consumo de $2.000.000 para cambiar el auto. Estamos a jueves, la plata ya está en su cuenta pero no la ha tocado.',
+        'Camila firmó el martes un crédito de consumo de $2.000.000 para cambiar el auto. Estamos a jueves, el dinero ya está en su cuenta pero no lo ha tocado.',
         'Revisando el contrato con calma descubre que el CAE es bastante más alto de lo que le habían dicho verbalmente en la sucursal, y que el crédito incluye dos seguros que ella no recuerda haber aceptado.',
       ],
       pregunta: '¿Qué le conviene hacer a Camila?',
@@ -180,7 +180,7 @@ export const leccion: Leccion = {
         },
         {
           id: 'o3',
-          texto: 'Gastar la plata rápido, porque una vez usada el banco ya no puede cobrarle seguros',
+          texto: 'Gastar el dinero rápido, porque una vez usado el banco ya no puede cobrarle seguros',
           correcta: false,
         },
         {
@@ -195,7 +195,7 @@ export const leccion: Leccion = {
         },
       ],
       explicacion:
-        'Camila está justo en la ventana donde el retracto puede aplicar: firmó hace dos días y no ha usado el dinero. Esa condición es clave y desaparece apenas gasta la plata, así que lo primero es consultar el plazo y los requisitos exactos. En paralelo, el reclamo por escrito deja constancia de la diferencia entre lo que le informaron y lo que dice el contrato, que es lo que después permite acudir al SERNAC. Las otras tres opciones empeoran su posición: gastar el dinero cierra la puerta del retracto, esperar consume el plazo, y dejar de pagar la pone en mora, que es un problema nuevo que no resuelve el original.',
+        'Camila está justo en la ventana donde el retracto puede aplicar: firmó hace dos días y no ha usado el dinero. Esa condición es clave y desaparece apenas gasta el dinero, así que lo primero es consultar el plazo y los requisitos exactos. En paralelo, el reclamo por escrito deja constancia de la diferencia entre lo que le informaron y lo que dice el contrato, que es lo que después permite acudir al SERNAC. Las otras tres opciones empeoran su posición: gastar el dinero cierra la puerta del retracto, esperar consume el plazo, y dejar de pagar la pone en mora, que es un problema nuevo que no resuelve el original.',
       bloquea: true,
     },
 
@@ -236,7 +236,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'BancoEstado', correcta: false },
           ],
           explicacion:
-            'El Banco Central emite la moneda y cuida su valor. Ojo con la última alternativa: BancoEstado es un banco comercial de propiedad del Estado, no el banco central del país. Son cosas distintas y se confunden seguido.',
+            'El Banco Central emite la moneda y cuida su valor. Fíjate en la última alternativa: BancoEstado es un banco comercial de propiedad del Estado, no el banco central del país. Son cosas distintas y se confunden seguido.',
         },
         {
           id: 'q2',

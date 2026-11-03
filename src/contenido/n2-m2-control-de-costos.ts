@@ -24,7 +24,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 2 · Módulo 2.2',
       titulo: 'Gasto inteligente y control de costos',
       bajada:
-        'No se trata de gastar menos. Se trata de saber qué gasto produce ventas y cuál solo se lleva plata sin que nadie lo note.',
+        'No se trata de gastar menos. Se trata de saber qué gasto produce ventas y cuál solo se lleva dinero sin que nadie lo note.',
       duracionMin: 13,
       objetivos: [
         'Distinguir costos directos de indirectos y fijos de variables',
@@ -41,7 +41,7 @@ export const leccion: Leccion = {
       titulo: 'Clasificar no es burocracia',
       parrafos: [
         'Cuando el negocio aprieta, la reacción natural es cortar lo primero que aparezca. Es la peor forma de hacerlo, porque lo primero que aparece suele ser lo que se ve, no lo que sobra.',
-        'Los costos se clasifican de dos maneras distintas, y sirven para preguntas distintas. Una te dice si tu precio está bien puesto; la otra, cuánto necesitas vender para no perder plata.',
+        'Los costos se clasifican de dos maneras distintas, y sirven para preguntas distintas. Una te dice si tu precio está bien puesto; la otra, cuánto necesitas vender para no perder dinero.',
         'Un mismo gasto puede ser directo y fijo al mismo tiempo, o indirecto y variable. No son categorías opuestas: son dos formas de mirar el mismo gasto.',
       ],
       puntos: [
@@ -127,7 +127,7 @@ export const leccion: Leccion = {
         'El problema no es cada uno por separado. Es que juntos pueden superar varios cientos de miles de pesos al mes en un negocio chico, y nadie los sumó nunca.',
       ],
       puntos: [
-        'Comisiones por cada venta con tarjeta, que se descuentan antes de que veas la plata.',
+        'Comisiones por cada venta con tarjeta, que se descuentan antes de que veas el dinero.',
         'Multas e intereses por declaraciones fuera de plazo, que son evitables en su totalidad.',
         'Suscripciones a servicios que se contrataron una vez y nadie volvió a usar.',
         'Seguros asociados a un crédito que ya se pagó, o que se contrataron sin saberlo.',
@@ -190,7 +190,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'El directo se paga al contado y el indirecto a crédito', correcta: false },
           ],
           explicacion:
-            'Lo que los separa es si el gasto se puede asignar a algo que vendes. La harina del pan es directa; el arriendo del local es indirecto, porque sostiene todo lo que haces y no un producto en particular. Ojo con la primera alternativa: directo e indirecto es una clasificación distinta de fijo y variable, y un mismo gasto puede ser directo y variable a la vez.',
+            'Lo que los separa es si el gasto se puede asignar a algo que vendes. La harina del pan es directa; el arriendo del local es indirecto, porque sostiene todo lo que haces y no un producto en particular. Fíjate en la primera alternativa: directo e indirecto es una clasificación distinta de fijo y variable, y un mismo gasto puede ser directo y variable a la vez.',
         },
         {
           id: 'q2',
@@ -222,7 +222,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Ninguno: todos bajan con las ventas', correcta: false },
           ],
           explicacion:
-            'Los fijos no se mueven: el arriendo y los sueldos son los mismos vendas mucho o poco. Los variables, en cambio, bajan solos cuando vendes menos, porque dependen de la venta. Por eso un negocio con costos fijos altos necesita un piso de ventas más alto para no perder plata, y eso es justamente lo que mide el punto de equilibrio que verás en el Nivel 3.',
+            'Los fijos no se mueven: el arriendo y los sueldos son los mismos vendas mucho o poco. Los variables, en cambio, bajan solos cuando vendes menos, porque dependen de la venta. Por eso un negocio con costos fijos altos necesita un piso de ventas más alto para no perder dinero, y eso es justamente lo que mide el punto de equilibrio que verás en el Nivel 3.',
         },
       ],
     },

@@ -15,6 +15,6 @@ export const nivel3: Nivel = {
   titulo: 'Nivel 3',
   subtitulo: 'Decisiones avanzadas',
   descripcion:
-    'Dejar de reaccionar y empezar a decidir. Contabilidad que sirve para algo, punto de equilibrio, flujo proyectado y las herramientas para evaluar si una inversión vale la pena antes de comprometer la plata.',
+    'Dejar de reaccionar y empezar a decidir. Contabilidad que sirve para algo, punto de equilibrio, flujo proyectado y las herramientas para evaluar si una inversión vale la pena antes de comprometer el dinero.',
   lecciones: [m1, m2, m3, m4, m5],
 }

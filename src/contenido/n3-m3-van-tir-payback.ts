@@ -40,9 +40,9 @@ export const leccion: Leccion = {
       titulo: 'Mil pesos hoy no son mil pesos en tres años',
       parrafos: [
         'Esto ya lo viste en el primer módulo del Nivel 1, con la inflación. Aquí se usa para algo distinto: comparar un desembolso de hoy con ganancias que van a llegar repartidas en varios años.',
-        'La plata de hoy vale más por dos razones. Una es la inflación: dentro de tres años esos pesos comprarán menos. La otra es el costo de oportunidad: si no inviertes en este proyecto, podrías usar esa plata en otra cosa que rinda.',
+        'El dinero de hoy vale más por dos razones. Una es la inflación: dentro de tres años esos pesos comprarán menos. La otra es el costo de oportunidad: si no inviertes en este proyecto, podrías usar ese dinero en otra cosa que rinda.',
         'Por eso, cuando un proyecto promete devolverte $400.000 al año durante cuatro años, no es correcto sumarlos y decir que te devuelve $1.600.000. Hay que traer cada uno a su valor de hoy, y eso es exactamente lo que hace el VAN.',
-        'La tasa con la que se hace esa conversión se llama tasa de descuento, y la eliges tú. Puede ser la tasa del crédito que tomarías o lo que te rendiría esa plata en otra parte: es el mínimo que le exiges al proyecto.',
+        'La tasa con la que se hace esa conversión se llama tasa de descuento, y la eliges tú. Puede ser la tasa del crédito que tomarías o lo que te rendiría ese dinero en otra parte: es el mínimo que le exiges al proyecto.',
       ],
       nota: 'No necesitas calcular esto a mano. Lo que sí necesitas es entender qué significa el resultado, porque eso es lo que te deja discutir con un banco o con un socio de igual a igual.',
     },
@@ -58,13 +58,13 @@ export const leccion: Leccion = {
           id: 't1',
           titulo: 'VAN',
           definicion:
-            'Valor Actual Neto. Trae todas las ganancias futuras a pesos de hoy y les resta la inversión. Se expresa en pesos. Si es positivo, el proyecto rinde más que la tasa que le exigiste; si es negativo, te conviene más usar la plata en otra cosa.',
+            'Valor Actual Neto. Trae todas las ganancias futuras a pesos de hoy y les resta la inversión. Se expresa en pesos. Si es positivo, el proyecto rinde más que la tasa que le exigiste; si es negativo, te conviene más usar el dinero en otra cosa.',
         },
         {
           id: 't2',
           titulo: 'TIR',
           definicion:
-            'Tasa Interna de Retorno. Es la rentabilidad anual del proyecto: la tasa exacta a la que el VAN daría cero. Se expresa en porcentaje. Sirve para compararla con lo que te cuesta la plata: si la TIR es 22 % y el crédito te cobra 15 %, hay margen.',
+            'Tasa Interna de Retorno. Es la rentabilidad anual del proyecto: la tasa exacta a la que el VAN daría cero. Se expresa en porcentaje. Sirve para compararla con lo que te cuesta el dinero: si la TIR es 22 % y el crédito te cobra 15 %, hay margen.',
         },
         {
           id: 't3',
@@ -76,7 +76,7 @@ export const leccion: Leccion = {
           id: 't4',
           titulo: 'ROI',
           definicion:
-            'Retorno sobre la inversión: la ganancia total dividida por lo que invertiste, en porcentaje. Es el más fácil de comunicar y el menos riguroso, porque no considera cuándo llega la plata. Un ROI de 60 % en un año y uno de 60 % en diez años no son lo mismo.',
+            'Retorno sobre la inversión: la ganancia total dividida por lo que invertiste, en porcentaje. Es el más fácil de comunicar y el menos riguroso, porque no considera cuándo llega el dinero. Un ROI de 60 % en un año y uno de 60 % en diez años no son lo mismo.',
         },
       ],
       nota: 'Ninguno se usa solo. El VAN dice cuánto ganas, la TIR a qué ritmo, el Payback cuánto arriesgas mientras tanto y el ROI cuánto rindió en total.',
@@ -93,7 +93,7 @@ export const leccion: Leccion = {
       pares: [
         {
           id: 'e1',
-          izquierda: '¿Cuánta plata de hoy me deja este proyecto, descontando lo que le exijo?',
+          izquierda: '¿Cuánto dinero de hoy me deja este proyecto, descontando lo que le exijo?',
           derecha: 'VAN',
         },
         {
@@ -171,7 +171,7 @@ export const leccion: Leccion = {
       },
       inicial: { inversion: 1000000, flujoAnual: 400000, anios: 4, tasa: 10 },
       lectura: 'VAN: lo que deja en pesos de hoy',
-      nota: 'Sube la tasa que le exiges hasta que el VAN se vuelva negativo. El valor donde cruza el cero es la TIR, y así se entiende qué significa de verdad: es el techo de lo que puedes pagar por la plata antes de que el proyecto deje de convenir.',
+      nota: 'Sube la tasa que le exiges hasta que el VAN se vuelva negativo. El valor donde cruza el cero es la TIR, y así se entiende qué significa de verdad: es el techo de lo que puedes pagar por el dinero antes de que el proyecto deje de convenir.',
     },
 
     {
@@ -182,7 +182,7 @@ export const leccion: Leccion = {
       escenario: [
         'Carolina tiene un taller de costura y $1.000.000 para invertir. Evalúa dos opciones.',
         'La primera es comprar dos máquinas que le dejarían $400.000 al año durante cuatro años. La segunda es un contrato de confección a dos años que le dejaría $600.000 anuales.',
-        'Su contador le dice que el contrato "tiene mejor retorno porque recupera la plata más rápido". Carolina tiene un crédito al 15 % anual que podría pagar antes con cualquiera de los dos.',
+        'Su contador le dice que el contrato "tiene mejor retorno porque recupera el dinero más rápido". Carolina tiene un crédito al 15 % anual que podría pagar antes con cualquiera de los dos.',
       ],
       pregunta: '¿Qué debería considerar Carolina?',
       elegir: 2,
@@ -206,7 +206,7 @@ export const leccion: Leccion = {
         },
         {
           id: 'o4',
-          texto: 'Que debe elegir el que devuelva más plata en total, sin descontar nada',
+          texto: 'Que debe elegir el que devuelva más dinero en total, sin descontar nada',
           correcta: false,
         },
         {
@@ -216,7 +216,7 @@ export const leccion: Leccion = {
         },
       ],
       explicacion:
-        'El dato que cambia la decisión es el crédito al 15 %. Con una TIR cercana al 13,1 %, el contrato rinde menos de lo que le cuesta su propia deuda: Carolina ganaría más usando ese millón en pagar el crédito. Las máquinas, con TIR cercana al 21,9 %, sí superan ese costo. Y el consejo del contador confunde velocidad con rentabilidad: el Payback mide riesgo y liquidez, no cuánto ganas, así que como único criterio lleva a rechazar proyectos buenos. Sumar los flujos sin descontarlos ignora que la plata de hoy vale más. La inversión igual no hace comparables dos proyectos: lo que los diferencia es cuánto devuelven y cuándo.',
+        'El dato que cambia la decisión es el crédito al 15 %. Con una TIR cercana al 13,1 %, el contrato rinde menos de lo que le cuesta su propia deuda: Carolina ganaría más usando ese millón en pagar el crédito. Las máquinas, con TIR cercana al 21,9 %, sí superan ese costo. Y el consejo del contador confunde velocidad con rentabilidad: el Payback mide riesgo y liquidez, no cuánto ganas, así que como único criterio lleva a rechazar proyectos buenos. Sumar los flujos sin descontarlos ignora que el dinero de hoy vale más. La inversión igual no hace comparables dos proyectos: lo que los diferencia es cuánto devuelven y cuándo.',
       bloquea: true,
     },
 
@@ -242,7 +242,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Que la inversión inicial es baja', correcta: false },
           ],
           explicacion:
-            'El VAN positivo significa que, después de traer las ganancias futuras a pesos de hoy y descontarles lo que le exigiste al proyecto, todavía sobra plata. No dice nada sobre el riesgo ni sobre la velocidad de recuperación: para eso están el Payback y tu propio juicio sobre qué tan confiables son esos flujos.',
+            'El VAN positivo significa que, después de traer las ganancias futuras a pesos de hoy y descontarles lo que le exigiste al proyecto, todavía sobra dinero. No dice nada sobre el riesgo ni sobre la velocidad de recuperación: para eso están el Payback y tu propio juicio sobre qué tan confiables son esos flujos.',
         },
         {
           id: 'q2',
@@ -258,7 +258,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'La TIR no se compara con nada: se mira sola', correcta: false },
           ],
           explicacion:
-            'La TIR sola no dice si un proyecto es bueno: necesita una referencia. Esa referencia es lo que te cuesta la plata, sea la tasa de tu crédito o lo que rendiría en otra parte. Una TIR de 13 % es excelente si tu costo es 5 % y es mala si tu crédito cobra 15 %, como en el caso de Carolina.',
+            'La TIR sola no dice si un proyecto es bueno: necesita una referencia. Esa referencia es lo que te cuesta el dinero, sea la tasa de tu crédito o lo que rendiría en otra parte. Una TIR de 13 % es excelente si tu costo es 5 % y es mala si tu crédito cobra 15 %, como en el caso de Carolina.',
         },
         {
           id: 'q3',
@@ -268,7 +268,7 @@ export const leccion: Leccion = {
             { id: 'b', texto: 'Que solo sirve para inversiones grandes', correcta: false },
             {
               id: 'c',
-              texto: 'Que no considera cuándo llega la plata: 60 % en un año y en diez años se ven igual',
+              texto: 'Que no considera cuándo llega el dinero: 60 % en un año y en diez años se ven igual',
               correcta: true,
             },
             { id: 'd', texto: 'Que no se puede expresar en porcentaje', correcta: false },
@@ -285,13 +285,13 @@ export const leccion: Leccion = {
       etiqueta: 'Cierre',
       titulo: 'Lo que te llevas',
       resumen: [
-        'La plata de hoy vale más que la misma cantidad en el futuro. Por eso no se suman flujos de años distintos sin descontarlos.',
+        'El dinero de hoy vale más que la misma cantidad en el futuro. Por eso no se suman flujos de años distintos sin descontarlos.',
         'El VAN dice cuánto ganas en pesos de hoy; la TIR a qué tasa rinde; el Payback cuánto demoras en salir del riesgo; el ROI cuánto rindió en total.',
-        'La TIR se compara siempre contra lo que te cuesta la plata. Sola no significa nada.',
+        'La TIR se compara siempre contra lo que te cuesta el dinero. Sola no significa nada.',
         'Ningún indicador decide por sí solo. El Payback prefiere lo rápido, el VAN prefiere lo rentable, y cuál pesa más depende de cuánta caja puedas dejar comprometida.',
       ],
       pasoSemana:
-        'Toma una inversión que tengas pendiente, aunque sea chica, y métela en el simulador con una estimación honesta de lo que te dejaría al año. Usa como tasa mínima la de tu crédito más caro. Si el VAN sale negativo, acabas de ahorrarte esa plata; si sale positivo, ya tienes con qué justificarlo ante un banco.',
+        'Toma una inversión que tengas pendiente, aunque sea chica, y métela en el simulador con una estimación honesta de lo que te dejaría al año. Usa como tasa mínima la de tu crédito más caro. Si el VAN sale negativo, acabas de ahorrarte ese dinero; si sale positivo, ya tienes con qué justificarlo ante un banco.',
     },
   ],
 }

@@ -45,7 +45,7 @@ export const leccion: Leccion = {
         'El estado de resultados pregunta: en este periodo, ¿gané o perdí? Mira una película, un mes o un año. El balance pregunta: hoy, ¿qué tengo y qué debo? Mira una foto, un instante.',
       ],
       puntos: [
-        'Un negocio puede tener buen estado de resultados y mal balance: gana plata pero está lleno de deudas de antes.',
+        'Un negocio puede tener buen estado de resultados y mal balance: gana dinero pero está lleno de deudas de antes.',
         'También al revés: un balance sólido y un mal mes. Son dos diagnósticos independientes.',
         'Y, como viste en el Nivel 2, ninguno de los dos te dice si vas a poder pagar los sueldos el día 30. Esa es la tercera pregunta y la responde el flujo de caja.',
       ],
@@ -140,7 +140,7 @@ export const leccion: Leccion = {
           id: 'b1',
           titulo: 'Activos',
           definicion:
-            'Todo lo que el negocio tiene o le deben: efectivo, cuentas por cobrar, inventario, máquinas, instalaciones. Se ordenan del más líquido al menos líquido, es decir, de lo que es plata hoy a lo que costaría convertir en plata.',
+            'Todo lo que el negocio tiene o le deben: efectivo, cuentas por cobrar, inventario, máquinas, instalaciones. Se ordenan del más líquido al menos líquido, es decir, de lo que es dinero hoy a lo que costaría convertir en dinero.',
         },
         {
           id: 'b2',
@@ -152,7 +152,7 @@ export const leccion: Leccion = {
           id: 'b3',
           titulo: 'Patrimonio',
           definicion:
-            'Lo que queda para los dueños: lo que aportaron más las utilidades que dejaron dentro del negocio. No es plata disponible: es lo que sobraría si se vendiera todo y se pagaran todas las deudas.',
+            'Lo que queda para los dueños: lo que aportaron más las utilidades que dejaron dentro del negocio. No es dinero disponible: es lo que sobraría si se vendiera todo y se pagaran todas las deudas.',
         },
         {
           id: 'b4',
@@ -206,7 +206,7 @@ export const leccion: Leccion = {
         },
       ],
       explicacion:
-        'Misma utilidad, situaciones opuestas. La primera tiene $10.000.000 entre efectivo y cuentas por cobrar contra $25.000.000 que vence pronto: su plata está atrapada en inventario que todavía no se vende. La segunda tiene $17.000.000 líquidos contra $4.000.000 de deuda. Tener más activos totales no dice nada si son difíciles de convertir en plata, que es justo el problema de la primera. Y "vender más" no es la solución: necesita vender lo que ya tiene en bodega, que es distinto. Esto es exactamente por qué los dos reportes se leen juntos.',
+        'Misma utilidad, situaciones opuestas. La primera tiene $10.000.000 entre efectivo y cuentas por cobrar contra $25.000.000 que vence pronto: su dinero está atrapado en inventario que todavía no se vende. La segunda tiene $17.000.000 líquidos contra $4.000.000 de deuda. Tener más activos totales no dice nada si son difíciles de convertir en dinero, que es justo el problema de la primera. Y "vender más" no es la solución: necesita vender lo que ya tiene en bodega, que es distinto. Esto es exactamente por qué los dos reportes se leen juntos.',
       bloquea: true,
     },
 
@@ -259,13 +259,13 @@ export const leccion: Leccion = {
             { id: 'b', texto: 'El balance general, únicamente', correcta: false },
             {
               id: 'c',
-              texto: 'El flujo de caja, que muestra la plata que entró y salió de verdad',
+              texto: 'El flujo de caja, que muestra el dinero que entró y salió de verdad',
               correcta: true,
             },
             { id: 'd', texto: 'Ninguno: es un error de registro', correcta: false },
           ],
           explicacion:
-            'El estado de resultados puede incluir ventas facturadas que todavía no cobras, así que muestra utilidad sin que haya plata. El balance muestra que esas ventas están en cuentas por cobrar. Pero el que responde directamente a "¿tengo con qué pagar?" es el flujo de caja, que viste en el Nivel 2. No es un error: es la diferencia entre ganar y tener.',
+            'El estado de resultados puede incluir ventas facturadas que todavía no cobras, así que muestra utilidad sin que haya dinero. El balance muestra que esas ventas están en cuentas por cobrar. Pero el que responde directamente a "¿tengo con qué pagar?" es el flujo de caja, que viste en el Nivel 2. No es un error: es la diferencia entre ganar y tener.',
         },
       ],
     },

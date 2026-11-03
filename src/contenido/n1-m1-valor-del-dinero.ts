@@ -29,7 +29,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 1 · Módulo 1.1',
       titulo: 'El valor del dinero y la inflación',
       bajada:
-        'La misma cantidad de plata no compra lo mismo todos los años. Entender por qué es el primer paso para no perder sin darte cuenta.',
+        'La misma cantidad de dinero no compra lo mismo todos los años. Entender por qué es el primer paso para no perder sin darte cuenta.',
       duracionMin: 12,
       objetivos: [
         'Reconocer las tres funciones que cumple el dinero',
@@ -89,9 +89,9 @@ export const leccion: Leccion = {
       id: 'p4',
       tipo: 'contenido',
       etiqueta: 'El concepto',
-      titulo: 'Inflación: cuando los precios suben y tu plata rinde menos',
+      titulo: 'Inflación: cuando los precios suben y tu dinero rinde menos',
       parrafos: [
-        'La inflación es el aumento generalizado de los precios. No es que un producto suba: es que casi todo sube al mismo tiempo, y por eso la misma plata alcanza para menos.',
+        'La inflación es el aumento generalizado de los precios. No es que un producto suba: es que casi todo sube al mismo tiempo, y por eso el mismo dinero alcanza para menos.',
         'Para medirla, el Instituto Nacional de Estadísticas arma una canasta con los bienes y servicios que consume un hogar promedio y revisa mes a mes cuánto cuesta. Esa medición es el Índice de Precios al Consumidor, el IPC.',
         'En septiembre de 2025, el IPC subió 0,4 % respecto del mes anterior, acumulando 3,3 % en lo que iba del año y 4,4 % en doce meses. El Banco Central tiene como meta que la inflación anual se mantenga cerca del 3 %, así que esa cifra estaba por encima de lo esperado.',
       ],
@@ -132,25 +132,25 @@ export const leccion: Leccion = {
             'La institución que emite el peso chileno y cuida su valor. Su meta es que la inflación anual se mantenga en torno al 3 %. Para lograrlo mueve la tasa de interés, que es lo que termina afectando lo que pagas por un crédito.',
         },
       ],
-      nota: 'La UF no es plata: es una regla para expresar montos. No existen billetes de UF, existen pesos que se calculan según ella.',
+      nota: 'La UF no es dinero: es una regla para expresar montos. No existen billetes de UF, existen pesos que se calculan según ella.',
     },
 
     {
       id: 'p6',
       tipo: 'simulador',
       etiqueta: 'Pruébalo',
-      titulo: '¿Cuánto vale tu plata dentro de un año?',
+      titulo: '¿Cuánto vale tu dinero dentro de un año?',
       instruccion:
         'Pon una cantidad que tengas guardada y mira cuánto podrá comprar más adelante si los precios siguen subiendo.',
       calculo: 'inflacion',
       etiquetas: {
-        monto: '¿Cuánta plata tienes guardada?',
+        monto: '¿Cuánto dinero tienes guardado?',
         tasa: '¿Cuánto esperas que suban los precios al año?',
         meses: '¿Dentro de cuántos meses?',
       },
       inicial: { monto: 1000000, tasaAnual: 4.4, meses: 12 },
-      lectura: 'Con esa plata vas a poder comprar lo que hoy compras con',
-      nota: 'La plata no desaparece: sigues teniendo la misma cantidad de pesos. Lo que cambia es cuánto alcanzan. Por eso dejar el ahorro quieto tiene un costo, aunque no se vea en la cuenta.',
+      lectura: 'Con ese dinero vas a poder comprar lo que hoy compras con',
+      nota: 'El dinero no desaparece: sigues teniendo la misma cantidad de pesos. Lo que cambia es cuánto alcanzan. Por eso dejar el ahorro quieto tiene un costo, aunque no se vea en la cuenta.',
       fuente:
         'El 4,4 % que viene cargado es la inflación de doce meses a septiembre de 2025. Cámbialo por el dato actual para que el resultado sirva.',
     },
@@ -246,7 +246,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: '2,7 %', correcta: false },
           ],
           explicacion:
-            'La inflación de doce meses fue 4,4 %. Ojo con el 3,3 %: esa era la variación acumulada en lo que iba del año, de enero a septiembre, que es otra medición. Las tres cifras conviven en la misma publicación del INE y conviene no confundirlas.',
+            'La inflación de doce meses fue 4,4 %. Fíjate en el 3,3 %: esa era la variación acumulada en lo que iba del año, de enero a septiembre, que es otra medición. Las tres cifras conviven en la misma publicación del INE y conviene no confundirlas.',
         },
         {
           id: 'q3',
@@ -263,7 +263,7 @@ export const leccion: Leccion = {
         {
           id: 'q4',
           texto:
-            'Un depósito a plazo paga 0,36 % mensual y la inflación anual es 4,4 %. ¿Qué pasa con el poder de compra de esa plata?',
+            'Un depósito a plazo paga 0,36 % mensual y la inflación anual es 4,4 %. ¿Qué pasa con el poder de compra de ese dinero?',
           opciones: [
             { id: 'a', texto: 'Aumenta con seguridad', correcta: false },
             { id: 'b', texto: 'Se mantiene exactamente igual', correcta: false },
@@ -288,7 +288,7 @@ export const leccion: Leccion = {
         'Una tasa mensual hay que anualizarla antes de compararla con la inflación. Si queda por debajo, el ahorro pierde poder de compra aunque el saldo suba.',
       ],
       pasoSemana:
-        'Busca el último IPC de doce meses en ine.gob.cl y compáralo con la tasa que te paga hoy tu cuenta de ahorro o tu depósito. Son dos números y cinco minutos, y te dicen si tu plata está creciendo o solo aguantando.',
+        'Busca el último IPC de doce meses en ine.gob.cl y compáralo con la tasa que te paga hoy tu cuenta de ahorro o tu depósito. Son dos números y cinco minutos, y te dicen si tu dinero está creciendo o solo manteniéndose.',
     },
   ],
 }

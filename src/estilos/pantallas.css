@@ -305,20 +305,21 @@
 }
 
 .opcion--fallo {
-  border-color: var(--color-atencion-outline);
-  background: var(--color-atencion-container);
-  color: var(--color-atencion);
+  border-color: var(--color-error);
+  background: var(--color-error-container);
+  color: var(--color-on-error-container);
 }
 
 .opcion--fallo .opcion__casilla {
-  background: var(--color-atencion);
-  border-color: var(--color-atencion);
-  color: var(--color-atencion-container);
+  background: var(--color-error);
+  border-color: var(--color-error);
+  color: var(--color-on-error);
 }
 
 .opcion--perdida {
-  border-color: var(--color-exito-outline);
-  border-style: dashed;
+  border-color: var(--color-exito);
+  background: var(--color-exito-container);
+  color: var(--color-on-exito-container);
 }
 
 .opcion:disabled {
@@ -467,8 +468,8 @@
 }
 
 .ficha--errada {
-  border-color: var(--color-atencion-outline);
-  background: var(--color-atencion-container);
+  border-color: var(--color-error);
+  background: var(--color-error-container);
   animation: sacudir 260ms ease-in-out;
 }
 

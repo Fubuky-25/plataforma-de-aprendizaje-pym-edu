@@ -46,7 +46,7 @@ export const leccion: Leccion = {
       parrafos: [
         'Ahorrar sirve para tres cosas concretas: enfrentar una emergencia sin pedir prestado, financiar un proyecto y cumplir una meta. Las tres tienen algo en común: son la alternativa a endeudarse.',
         'La práctica que más cambia el resultado es simple y se llama "págate primero": apartar el ahorro apenas entra el sueldo, no a fin de mes con lo que quede. Suena menor, pero invierte el orden completo. Si ahorras lo que sobra, estás ahorrando lo que tu propio consumo decidió dejarte.',
-        'La segunda decisión es dónde ponerlo. Guardar la plata en casa la deja expuesta a robo y, sobre todo, a la inflación: sigue siendo la misma cantidad de pesos, pero compra menos cada mes que pasa.',
+        'La segunda decisión es dónde ponerlo. Guardar el dinero en casa lo deja expuesto a robo y, sobre todo, a la inflación: sigue siendo la misma cantidad de pesos, pero compra menos cada mes que pasa.',
       ],
       nota: 'Un fondo de emergencia no es un ahorro cualquiera: es el que evita que un imprevisto se convierta en una deuda al 2,5 % mensual. Por eso conviene armarlo antes que cualquier otra meta.',
     },
@@ -56,7 +56,7 @@ export const leccion: Leccion = {
       tipo: 'comparacion',
       etiqueta: 'Compara',
       titulo: 'Guardar en casa o guardar en el sistema',
-      bajada: 'La misma plata, con riesgos distintos.',
+      bajada: 'El mismo dinero, con riesgos distintos.',
       criterios: [
         'Dónde está',
         'Qué pasa con la inflación',
@@ -100,7 +100,7 @@ export const leccion: Leccion = {
           id: 't1',
           titulo: 'Cuenta de ahorro',
           definicion:
-            'La más simple. Rinde poco, pero la plata está disponible y separada de la cuenta que usas a diario. Esa separación ya es la mitad del beneficio: lo que no ves en el saldo corriente, no lo gastas sin pensar.',
+            'La más simple. Rinde poco, pero el dinero está disponible y separado de la cuenta que usas a diario. Esa separación ya es la mitad del beneficio: lo que no ves en el saldo corriente, no lo gastas sin pensar.',
         },
         {
           id: 't2',
@@ -150,7 +150,7 @@ export const leccion: Leccion = {
       etiqueta: 'Pruébalo',
       titulo: 'Cuánto tienes que guardar al mes',
       instruccion:
-        'Pon tu meta, el plazo y el rendimiento mensual que te ofrezcan. Mira cuánto cambia la cuota cuando la plata rinde.',
+        'Pon tu meta, el plazo y el rendimiento mensual que te ofrezcan. Mira cuánto cambia la cuota cuando el dinero rinde.',
       calculo: 'metaAhorro',
       etiquetas: {
         meta: '¿Cuánto quieres juntar?',
@@ -207,7 +207,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Tarjeta de crédito', correcta: false },
           ],
           explicacion:
-            'La UF se reajusta con el IPC, así que un instrumento expresado en UF conserva el poder de compra por diseño. La cuenta corriente y la alcancía dejan la plata fija en pesos mientras los precios suben. Y la tarjeta de crédito no es un instrumento de ahorro: es lo contrario, una deuda.',
+            'La UF se reajusta con el IPC, así que un instrumento expresado en UF conserva el poder de compra por diseño. La cuenta corriente y la alcancía dejan el dinero fijo en pesos mientras los precios suben. Y la tarjeta de crédito no es un instrumento de ahorro: es lo contrario, una deuda.',
         },
         {
           id: 'q2',
@@ -243,7 +243,7 @@ export const leccion: Leccion = {
       etiqueta: 'Cierre',
       titulo: 'Lo que te llevas',
       resumen: [
-        'Págate primero: aparta el ahorro el día que entra la plata, no con lo que quede a fin de mes.',
+        'Págate primero: aparta el ahorro el día que entra el dinero, no con lo que quede a fin de mes.',
         'El ahorro en casa pierde valor todos los meses aunque nadie te lo robe.',
         'Objetivo, plazo y cuota convierten una intención en un plan que puedes revisar.',
         'Un depósito a plazo en pesos conserva el valor frente a la inflación, pero casi no lo hace crecer. Para plazos largos, los instrumentos en UF están hechos para eso.',

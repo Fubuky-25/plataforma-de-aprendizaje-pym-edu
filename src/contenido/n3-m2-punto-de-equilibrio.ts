@@ -23,7 +23,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 3 · Módulo 3.2',
       titulo: 'Flujo proyectado y punto de equilibrio',
       bajada:
-        'Dos preguntas que todo negocio debería poder responder: cuánto necesito vender para no perder, y en qué mes me quedo sin plata.',
+        'Dos preguntas que todo negocio debería poder responder: cuánto necesito vender para no perder, y en qué mes me quedo sin dinero.',
       duracionMin: 16,
       objetivos: [
         'Proyectar tu caja de los próximos meses y ver el problema antes de que llegue',
@@ -62,7 +62,7 @@ export const leccion: Leccion = {
         'Pon lo que tienes hoy, lo que entra y sale en un mes normal, y cuánto esperas crecer. Mira el saldo mes a mes.',
       calculo: 'flujoProyectado',
       etiquetas: {
-        saldoInicial: '¿Cuánta plata tiene el negocio hoy?',
+        saldoInicial: '¿Cuánto dinero tiene el negocio hoy?',
         ingresos: '¿Cuánto entra en un mes normal?',
         egresos: '¿Cuánto sale en un mes normal?',
         crecimiento: '¿Cuánto esperas crecer cada mes?',
@@ -116,7 +116,7 @@ export const leccion: Leccion = {
       titulo: 'La cafetería de Andrés',
       escenario: [
         'Andrés tiene una cafetería. Sus costos fijos son $1.800.000 al mes: arriendo, un ayudante y servicios. Vende el café a $2.000 y cada uno le cuesta $800 en insumos.',
-        'Su punto de equilibrio son 1.500 cafés al mes, unos 50 al día. Hoy vende alrededor de 45 diarios, así que está perdiendo plata todos los meses.',
+        'Su punto de equilibrio son 1.500 cafés al mes, unos 50 al día. Hoy vende alrededor de 45 diarios, así que está perdiendo dinero todos los meses.',
         'Está evaluando tres salidas: bajar el precio a $1.800 para atraer más gente, subirlo a $2.300, o cambiarse a un local más chico que cuesta $400.000 menos de arriendo.',
       ],
       pregunta: '¿Qué opciones mejoran de verdad la situación de Andrés?',
@@ -214,7 +214,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: '600.000 unidades', correcta: false },
           ],
           explicacion:
-            'El margen de contribución es $200 menos $80, o sea $120. Dividiendo los costos fijos por el margen: 600.000 / 120 = 5.000 unidades. Ojo con la primera alternativa: dividir por el precio en vez de por el margen da 3.000 y es el error más común, porque olvida que cada venta también trae su propio costo.',
+            'El margen de contribución es $200 menos $80, o sea $120. Dividiendo los costos fijos por el margen: 600.000 / 120 = 5.000 unidades. Fíjate en la primera alternativa: dividir por el precio en vez de por el margen da 3.000 y es el error más común, porque olvida que cada venta también trae su propio costo.',
         },
         {
           id: 'q3',

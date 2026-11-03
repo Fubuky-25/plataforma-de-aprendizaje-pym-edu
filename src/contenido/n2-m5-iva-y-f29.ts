@@ -8,7 +8,7 @@ import type { Leccion } from '../tipos'
  *
  * El material trae plazos, porcentajes de multa e intereses "actualizados a
  * 2025". Son exactamente el tipo de dato que cambia y que, citado mal, le
- * cuesta plata a alguien. Decisiones tomadas aquí:
+ * cuesta dinero a alguien. Decisiones tomadas aquí:
  *
  * - El mecanismo del IVA (débito menos crédito) es estable y se enseña directo.
  * - Los plazos y las multas se presentan como lo que decía el material en 2025,
@@ -56,7 +56,7 @@ export const leccion: Leccion = {
         'Ahí está el error que más complica a los negocios chicos: ver el total de la venta como ingreso propio. Si vendes algo en $119.000 con IVA incluido, tus ingresos son $100.000 y los otros $19.000 son del fisco, que pasaron por tu cuenta de ida.',
         'Si emites boletas o facturas electrónicas, cada mes tienes que presentar el Formulario 29 declarando el IVA de tus ventas y el de tus compras. Y esto es importante: hay que presentarlo incluso en un mes sin movimiento.',
       ],
-      nota: 'Una práctica simple cambia todo: apenas entra una venta, transfiere el IVA a una cuenta aparte. Cuando llegue la fecha de pagar, la plata va a estar, y no vas a tener que elegir entre el SII y un proveedor.',
+      nota: 'Una práctica simple cambia todo: apenas entra una venta, transfiere el IVA a una cuenta aparte. Cuando llegue la fecha de pagar, el dinero va a estar, y no vas a tener que elegir entre el SII y un proveedor.',
     },
 
     {
@@ -190,7 +190,7 @@ export const leccion: Leccion = {
         'La mayoría de los problemas con el IVA no son de interpretación tributaria: son de orden y de fechas.',
       ],
       puntos: [
-        'Separa el IVA apenas entra la venta. Si esperas a fin de mes, la plata ya se gastó en otra cosa.',
+        'Separa el IVA apenas entra la venta. Si esperas a fin de mes, el dinero ya se gastó en otra cosa.',
         'Pide factura en toda compra del negocio. Una boleta en una compra grande te cuesta cerca del 19 % del precio.',
         'Mantén al día tu registro de compras y ventas, y compáralo con lo que declaras. Las diferencias se detectan antes, no después.',
         'Declara aunque no hayas tenido movimiento. Un mes sin ventas igual exige declaración, y no hacerla genera sanción.',

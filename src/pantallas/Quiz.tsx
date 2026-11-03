@@ -118,10 +118,10 @@ export function Quiz({ pantalla, respuesta, alResolver, alGuardar }: Props) {
               veredicto = 'Correcta'
             } else if (marcada && !opcion.correcta) {
               estado = ' opcion--fallo'
-              veredicto = 'No era esta'
+              veredicto = 'Incorrecta'
             } else if (opcion.correcta) {
               estado = ' opcion--perdida'
-              veredicto = 'Esta era'
+              veredicto = 'Correcta'
             }
           } else if (marcada) {
             estado = ' opcion--marcada'

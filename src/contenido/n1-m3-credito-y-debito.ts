@@ -28,7 +28,7 @@ export const leccion: Leccion = {
       etiqueta: 'Nivel 1 · Módulo 1.3',
       titulo: 'Tarjetas: crédito versus débito',
       bajada:
-        'Se parecen, caben en el mismo bolsillo y se pasan por la misma máquina. Pero una gasta tu plata y la otra te presta la del banco.',
+        'Se parecen, caben en el mismo bolsillo y se pasan por la misma máquina. Pero una gasta tu dinero y la otra te presta el del banco.',
       duracionMin: 14,
       objetivos: [
         'Distinguir qué hace cada tarjeta con tu dinero',
@@ -45,7 +45,7 @@ export const leccion: Leccion = {
       titulo: 'Dos tarjetas, dos cosas distintas',
       parrafos: [
         'La tarjeta de débito identifica al titular de una cuenta corriente o de ahorro. Cuando compras o giras, el monto se descuenta al instante del saldo disponible. Por eso necesitas tener fondos: no hay nada que prestar, solo lo que ya tienes.',
-        'La tarjeta de crédito funciona al revés. El emisor, que puede ser un banco, una casa comercial o una cooperativa, te otorga una línea de crédito, y tú compras con esa plata prestada. El pago llega al mes siguiente en un estado de cuenta: puedes pagarlo completo o en cuotas, y si no lo pagas entero se generan intereses y comisiones.',
+        'La tarjeta de crédito funciona al revés. El emisor, que puede ser un banco, una casa comercial o una cooperativa, te otorga una línea de crédito, y tú compras con ese dinero prestado. El pago llega al mes siguiente en un estado de cuenta: puedes pagarlo completo o en cuotas, y si no lo pagas entero se generan intereses y comisiones.',
         'Ahí está toda la diferencia. Con débito gastas lo que tienes. Con crédito adquieres una deuda, aunque en el momento de pasar la tarjeta se sienta exactamente igual.',
       ],
       nota: 'Pagar con crédito y pagar el total al vencimiento no cuesta intereses. El problema no es la tarjeta de crédito: es no pagarla completa.',
@@ -58,7 +58,7 @@ export const leccion: Leccion = {
       titulo: 'En qué se diferencian',
       bajada: 'La misma compra, con la misma máquina, produce dos situaciones distintas.',
       criterios: [
-        'De dónde sale la plata',
+        'De dónde sale el dinero',
         'Qué pasa con la deuda',
         'Comisiones y costos',
         'Qué ganas',
@@ -112,13 +112,13 @@ export const leccion: Leccion = {
           id: 't3',
           titulo: 'Línea de crédito',
           definicion:
-            'El monto máximo que el emisor pone a tu disposición. No es plata tuya ni es un ahorro: es cuánto te están dispuestos a prestar. Que la línea suba no significa que estés mejor económicamente, solo que el emisor está dispuesto a arriesgar más contigo.',
+            'El monto máximo que el emisor pone a tu disposición. No es dinero tuyo ni es un ahorro: es cuánto te están dispuestos a prestar. Que la línea suba no significa que estés mejor económicamente, solo que el emisor está dispuesto a arriesgar más contigo.',
         },
         {
           id: 't4',
           titulo: 'Avance en efectivo',
           definicion:
-            'Sacar plata en efectivo con cargo a la tarjeta de crédito. Suele ser lo más caro que se puede hacer con una tarjeta: además del interés, casi siempre hay una comisión por la operación, y en muchos casos el interés empieza a correr de inmediato y no al mes siguiente.',
+            'Sacar dinero en efectivo con cargo a la tarjeta de crédito. Suele ser lo más caro que se puede hacer con una tarjeta: además del interés, casi siempre hay una comisión por la operación, y en muchos casos el interés empieza a correr de inmediato y no al mes siguiente.',
         },
       ],
     },
@@ -222,7 +222,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'No tiene comisiones', correcta: false },
           ],
           explicacion:
-            'El débito descuenta del saldo que ya tienes, en el momento. No financia nada ni usa una línea de crédito. Y ojo con la alternativa de las comisiones: muchas cuentas cobran mantención, así que "sin comisiones" no es parte de la definición de débito.',
+            'El débito descuenta del saldo que ya tienes, en el momento. No financia nada ni usa una línea de crédito. Y fíjate en la alternativa de las comisiones: muchas cuentas cobran mantención, así que "sin comisiones" no es parte de la definición de débito.',
         },
         {
           id: 'q2',

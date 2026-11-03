@@ -19,7 +19,7 @@ export const leccion: Leccion = {
   curso: 'Decisiones avanzadas',
   modulo: 'Módulo 3.4',
   area: 'Finanzas',
-  titulo: 'Con qué plata financiar el crecimiento',
+  titulo: 'Con qué dinero financiar el crecimiento',
   actualizada: 'octubre de 2026',
   fuentes: [
     'Programas de apoyo de CORFO y SERCOTEC, según el material del curso, 2025.',
@@ -29,7 +29,7 @@ export const leccion: Leccion = {
       id: 'p1',
       tipo: 'portada',
       etiqueta: 'Nivel 3 · Módulo 3.4',
-      titulo: 'Con qué plata financiar el crecimiento',
+      titulo: 'Con qué dinero financiar el crecimiento',
       bajada:
         'En el Nivel 2 viste los instrumentos de deuda. Aquí entra la pregunta anterior: ¿esto se financia con deuda, con capital propio o con alguien que entre al negocio?',
       duracionMin: 15,
@@ -71,7 +71,7 @@ export const leccion: Leccion = {
           id: 't1',
           titulo: 'Crowdfunding',
           definicion:
-            'Muchas personas aportan montos chicos a través de una plataforma, normalmente a cambio del producto por adelantado. Además de plata, te dice si el producto le interesa a alguien antes de producirlo. A cambio exige una campaña intensa y, si no llegas a la meta, en muchas plataformas no recibes nada.',
+            'Muchas personas aportan montos chicos a través de una plataforma, normalmente a cambio del producto por adelantado. Además de dinero, te dice si el producto le interesa a alguien antes de producirlo. A cambio exige una campaña intensa y, si no llegas a la meta, en muchas plataformas no recibes nada.',
         },
         {
           id: 't2',
@@ -100,7 +100,7 @@ export const leccion: Leccion = {
       tipo: 'comparacion',
       etiqueta: 'Compara',
       titulo: 'Financiarse con deuda o con capital',
-      bajada: 'La misma plata, dos acuerdos muy distintos.',
+      bajada: 'El mismo dinero, dos acuerdos muy distintos.',
       criterios: [
         'Qué entregas a cambio',
         'Qué pasa si el negocio va mal',
@@ -287,7 +287,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Una línea de crédito de la cuenta corriente', correcta: false },
           ],
           explicacion:
-            'Sobre un proyecto que todavía no genera ingresos, cualquier cuota fija empieza a correr antes que la plata, y eso puede hundir un proyecto que iba bien. El capital y los fondos no reembolsables aguantan esa espera. El factoring tampoco sirve aquí por una razón simple: requiere facturas ya emitidas a clientes que te deben, y en un proyecto que no ha vendido todavía no existen.',
+            'Sobre un proyecto que todavía no genera ingresos, cualquier cuota fija empieza a correr antes que el dinero, y eso puede hundir un proyecto que iba bien. El capital y los fondos no reembolsables aguantan esa espera. El factoring tampoco sirve aquí por una razón simple: requiere facturas ya emitidas a clientes que te deben, y en un proyecto que no ha vendido todavía no existen.',
         },
       ],
     },
@@ -304,7 +304,7 @@ export const leccion: Leccion = {
         'El capital se ve gratis porque no tiene cuota. Si el negocio funciona, repartir utilidades por años cuesta más que los intereses.',
       ],
       pasoSemana:
-        'Escribe el proyecto que tienes pendiente en una frase y responde una sola pregunta: ¿sabes con bastante certeza cuánto va a generar y cuándo? Si la respuesta es sí, busca deuda y no cedas nada del negocio. Si es no, busca una forma de probarlo en chico antes de comprometer plata grande.',
+        'Escribe el proyecto que tienes pendiente en una frase y responde una sola pregunta: ¿sabes con bastante certeza cuánto va a generar y cuándo? Si la respuesta es sí, busca deuda y no cedas nada del negocio. Si es no, busca una forma de probarlo en chico antes de comprometer dinero grande.',
     },
   ],
 }

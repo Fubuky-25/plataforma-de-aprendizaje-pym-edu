@@ -11,6 +11,6 @@ export const nivel2: Nivel = {
   titulo: 'Nivel 2',
   subtitulo: 'Gestión del emprendimiento',
   descripcion:
-    'El salto de ordenar tu plata a manejar la del negocio. Flujo de caja, costos, herramientas digitales, formalización, IVA y financiamiento: lo que hay que saber para que un emprendimiento deje de depender de la memoria del dueño.',
+    'El salto de ordenar tu dinero a manejar el del negocio. Flujo de caja, costos, herramientas digitales, formalización, IVA y financiamiento: lo que hay que saber para que un emprendimiento deje de depender de la memoria del dueño.',
   lecciones: [m1, m2, m3, m4, m5, m6],
 }

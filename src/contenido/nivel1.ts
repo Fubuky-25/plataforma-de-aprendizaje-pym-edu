@@ -11,6 +11,6 @@ export const nivel1: Nivel = {
   titulo: 'Nivel 1',
   subtitulo: 'Fundamentos de educación financiera',
   descripcion:
-    'Seis módulos para ordenar tu propia plata antes de ordenar la del negocio. No se asume ningún conocimiento previo: se parte por entender qué le pasa al dinero con el tiempo y se termina sabiendo a quién reclamarle cuando algo sale mal.',
+    'Seis módulos para ordenar tu propio dinero antes de ordenar el del negocio. No se asume ningún conocimiento previo: se parte por entender qué le pasa al dinero con el tiempo y se termina sabiendo a quién reclamarle cuando algo sale mal.',
   lecciones: [m1, m2, m3, m4, m5, m6],
 }

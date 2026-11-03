@@ -35,7 +35,7 @@ export const leccion: Leccion = {
         'Saber qué problema resuelve cada tipo de herramienta',
         'Reconocer cuándo una planilla basta y cuándo ya no',
         'Elegir con criterios propios, no por lo que use el vecino',
-        'Dar el primer paso sin gastar plata',
+        'Dar el primer paso sin gastar dinero',
       ],
     },
 
@@ -188,7 +188,7 @@ export const leccion: Leccion = {
       id: 'p6',
       tipo: 'contenido',
       etiqueta: 'Cómo partir',
-      titulo: 'Cinco pasos sin gastar plata',
+      titulo: 'Cinco pasos sin gastar dinero',
       parrafos: [
         'La digitalización se puede empezar hoy con lo que ya tienes. El orden importa más que las herramientas.',
       ],
@@ -226,7 +226,7 @@ export const leccion: Leccion = {
             { id: 'd', texto: 'Que está certificado como seguro contra virus', correcta: false },
           ],
           explicacion:
-            'Homologado quiere decir que el SII lo reconoce y que las boletas y facturas que emite son válidas. Ojo con la tercera alternativa: un software puede ayudarte a preparar la declaración y a tener los datos ordenados, pero declarar y pagar sigue siendo responsabilidad tuya.',
+            'Homologado quiere decir que el SII lo reconoce y que las boletas y facturas que emite son válidas. Fíjate en la tercera alternativa: un software puede ayudarte a preparar la declaración y a tener los datos ordenados, pero declarar y pagar sigue siendo responsabilidad tuya.',
         },
         {
           id: 'q2',
