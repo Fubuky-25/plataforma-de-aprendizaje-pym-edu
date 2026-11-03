@@ -240,6 +240,7 @@ Para no volver a discutirlas. El detalle y los motivos están en
 | Bloqueo de avance | Solo en caso, emparejar y evaluación. Se resuelve al responder, se acierte o no |
 | Publicación | Repositorio público y GitHub Pages, publicación manual |
 | Integración con el ERP | Enlace desde pymedu.cl a este sitio aparte |
+| Cómo se abre | Como ventana emergente desde el ERP, para usuarios que ya tienen cuenta. Por eso no hay botón para borrar datos: sería un riesgo de perder el avance sin aportar nada (retirado el 2026-11-02) |
 | Niveles | Los tres convertidos. La certificación final queda para definir con el equipo |
 
 Una diferencia deliberada con pymedu.cl, por accesibilidad: el texto del botón

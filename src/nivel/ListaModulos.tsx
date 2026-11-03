@@ -11,25 +11,6 @@ interface Props {
   alAbrir: (leccionId: string) => void
 }
 
-/**
- * Borra todo lo que la plataforma guardó en este navegador: el avance y las
- * respuestas que el usuario escribió sobre su propio negocio.
- */
-function borrarMisDatos() {
-  const seguro = window.confirm(
-    'Se va a borrar tu avance y todo lo que escribiste sobre tu negocio en este navegador. No se puede deshacer. ¿Continuar?',
-  )
-  if (!seguro) return
-  try {
-    Object.keys(localStorage)
-      .filter((k) => k.startsWith('pymedu:'))
-      .forEach((k) => localStorage.removeItem(k))
-  } catch {
-    /* sin almacenamiento disponible */
-  }
-  window.location.reload()
-}
-
 export function ListaModulos({ niveles, nivelActivo, alCambiarNivel, alAbrir }: Props) {
   const { tema, alternar } = useTema()
 
@@ -191,18 +172,10 @@ export function ListaModulos({ niveles, nivelActivo, alCambiarNivel, alAbrir }: 
             de temas tributarios y legales están pendientes de revisión profesional.
           </p>
 
-          <div className="mis-datos">
-            <p className="fuente" style={{ marginTop: 0 }}>
-              Tu avance y lo que escribes en las pantallas de "aplícalo a tu negocio" se guardan
-              solo en este navegador. No se envían a ninguna parte.
-            </p>
-            <button type="button" className="boton boton--secundario" onClick={borrarMisDatos}>
-              <span className="icono" aria-hidden="true">
-                delete
-              </span>
-              Borrar mis datos de este dispositivo
-            </button>
-          </div>
+          <p className="fuente">
+            Tu avance y lo que escribes en las pantallas de "aplícalo a tu negocio" se guardan
+            solo en este navegador. No se envían a ninguna parte.
+          </p>
         </div>
       </main>
     </div>
