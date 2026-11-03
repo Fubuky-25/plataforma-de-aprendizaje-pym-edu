@@ -1,0 +1,18 @@
+/* Iconos: subconjunto de Material Symbols Outlined con solo los iconos que usa
+   la plataforma (~7 KB cada uno). Si se usa un icono nuevo, hay que regenerar
+   estos archivos: ver docs/04-handoff.md. Manrope viene de @fontsource-variable. */
+@font-face {
+  font-family: 'Iconos PymEdu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../fuentes/iconos-material.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Iconos PymEdu Lleno';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('../fuentes/iconos-material-lleno.woff2') format('woff2');
+}

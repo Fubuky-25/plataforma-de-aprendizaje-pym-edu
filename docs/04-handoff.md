@@ -1,7 +1,7 @@
 # Handoff: plataforma de aprendizaje PymEdu
 
 Documento para retomar el proyecto desde cero, sin contexto previo.
-Estado al 2026-10-16.
+Estado al 2026-11-02.
 
 | | |
 |---|---|
@@ -279,10 +279,15 @@ respuestas se marca en dorado y no en rojo.
 - La publicación es manual.
 - No hay pruebas automáticas de interfaz; sí verificación de tipos y validación
   de datos.
-- Depende de Google Fonts. Si la tipografía no carga, cae a la del sistema; **si
-  los iconos no cargan, se ve su nombre en texto** (`arrow_forward`). Ocurre en
-  redes que bloquean Google. Pendiente S3 de la auditoría: esa dependencia
-  además entrega la IP del visitante a Google.
+- Las tipografías ya no vienen de Google: Manrope sale del paquete
+  `@fontsource-variable/manrope` y los iconos de dos subconjuntos de Material
+  Symbols (~7 KB cada uno) en `src/fuentes/`. La política de seguridad ya no
+  admite servidores externos y el sitio no entrega la IP del visitante a nadie
+  (cierra el hallazgo S3). **Trampa:** los subconjuntos solo traen los iconos
+  usados al 2026-11-02. Si una lección usa un icono nuevo, se verá su nombre en
+  texto (`arrow_forward`) hasta regenerar ambos archivos con la API de Google
+  Fonts (`icon_names=...`, un archivo con `FILL=0` y otro con `FILL=1`) y
+  convertirlos a woff2.
 - Accesibilidad cuidada pero no auditada con lector de pantalla real.
 - El repositorio es público: el código y `docs/` son visibles. Las capturas de
   referencia y los PDF del material quedaron fuera.
@@ -327,7 +332,7 @@ hoy a un cliente?**
 12. **Medición básica.** Saber en qué pantalla abandona la gente y qué
     preguntas fallan más. Decidir herramienta y cómo se informa a los usuarios.
 13. **Resolver los pendientes de auditoría** si se avanza hacia la integración:
-    S3 (Google Fonts) y el cifrado de los datos guardados.
+    el cifrado de los datos guardados (S3, Google Fonts, ya resuelto).
 
 ### Futuro, solo con evidencia de que hace falta
 

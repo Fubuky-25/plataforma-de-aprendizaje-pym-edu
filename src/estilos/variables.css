@@ -126,7 +126,7 @@
 
 :root {
   /* Manrope es la tipografía de la plataforma principal. */
-  --fuente: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --fuente: 'Manrope Variable', ui-sans-serif, system-ui, sans-serif;
 
   --t-portada: clamp(2rem, 1.2rem + 3.4vw, 3.25rem);
   --t-titulo: clamp(1.65rem, 1.15rem + 2.1vw, 2.35rem);
